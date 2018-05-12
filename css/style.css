@@ -1415,6 +1415,7 @@ code {
   background: #212326;
   font-family: "Menlo", "Meslo LG", monospace;
   -webkit-border-radius: 4px;
+  background-image: url("../images/code-bg.svg");
 }
 .highlight figcaption {
   margin: -5px 0 5px;

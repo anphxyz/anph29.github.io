@@ -12,7 +12,7 @@
 <meta property="og:url" content="https://anph29.github.io/2018/05/10/currying-technique/index.html">
 <meta property="og:site_name" content="Code notes &amp; tips">
 <meta property="og:description" content="THEORY CONCEPT English: Currying is when you break down a function that takes multiple arguments into a series of functions that take part of the arguments. Việt Ngữ: Currying là kỹ thuật phân rã hàm">
-<meta property="og:updated_time" content="2018-05-10T07:48:55.479Z">
+<meta property="og:updated_time" content="2018-05-16T03:27:21.871Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Currying Technique">
 <meta name="twitter:description" content="THEORY CONCEPT English: Currying is when you break down a function that takes multiple arguments into a series of functions that take part of the arguments. Việt Ngữ: Currying là kỹ thuật phân rã hàm">
@@ -64,6 +64,8 @@
     <br/>
     <span id="actions">
       <ul>
+        
+        <li><a class="icon" href="/2018/05/17/nodejs-cli-tool-with-example-make-module/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
         
         
         <li><a class="icon" href="/2018/05/09/sort-in-javascript/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
@@ -140,6 +142,7 @@
 </li>
 </ol>
 <h2 id="DEMO"><a href="#DEMO" class="headerlink" title="DEMO"></a>DEMO</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [</span><br><span class="line">  &#123; <span class="attr">key</span>: <span class="number">1</span>, <span class="attr">val</span>: <span class="string">'a'</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">key</span>: <span class="number">2</span>, <span class="attr">val</span>: <span class="string">'b'</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">key</span>: <span class="number">3</span>, <span class="attr">val</span>: <span class="string">'c'</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">key</span>: <span class="number">4</span>, <span class="attr">val</span>: <span class="string">'d'</span> &#125;</span><br><span class="line">],</span><br><span class="line">get = <span class="function"><span class="params">attr</span> =&gt;</span> item =&gt; item[attr],</span><br><span class="line">getKey = get(<span class="string">'key'</span>),</span><br><span class="line">getVal = get(<span class="string">'val'</span>),</span><br><span class="line">keyArray = arr.map(getKey),<span class="comment">//[1, 2, 3, 4]</span></span><br><span class="line">valArray = arr.map(getVal);<span class="comment">//["a", "b", "c", "d"]</span></span><br></pre></td></tr></table></figure>
+
   </div>
 </article>
 

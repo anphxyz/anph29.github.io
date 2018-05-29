@@ -6,16 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="Diagram| Action         | transfer             | Description — | :————: | :——————: | ————— 1   | get list       | Client  Server | attach :token to request 3   | server process | check before process">
+    <meta name="description" content="Diagram   # Action transfer Description                           1 get list Client &amp;lt;-res- Server :token = md5(DEFAULT_TOKEN + id)    2 edit, add, del Client -req-&amp;gt; Server attach :token to reque">
 <meta property="og:type" content="article">
 <meta property="og:title" content="client - server token validate">
 <meta property="og:url" content="https://anph29.github.io/2018/05/29/client-server-token-validate/index.html">
 <meta property="og:site_name" content="Code notes &amp; tips">
-<meta property="og:description" content="Diagram| Action         | transfer             | Description — | :————: | :——————: | ————— 1   | get list       | Client  Server | attach :token to request 3   | server process | check before process">
-<meta property="og:updated_time" content="2018-05-29T03:43:49.378Z">
+<meta property="og:description" content="Diagram   # Action transfer Description                           1 get list Client &amp;lt;-res- Server :token = md5(DEFAULT_TOKEN + id)    2 edit, add, del Client -req-&amp;gt; Server attach :token to reque">
+<meta property="og:updated_time" content="2018-05-29T03:44:41.349Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="client - server token validate">
-<meta name="twitter:description" content="Diagram| Action         | transfer             | Description — | :————: | :——————: | ————— 1   | get list       | Client  Server | attach :token to request 3   | server process | check before process">
+<meta name="twitter:description" content="Diagram   # Action transfer Description                           1 get list Client &amp;lt;-res- Server :token = md5(DEFAULT_TOKEN + id)    2 edit, add, del Client -req-&amp;gt; Server attach :token to reque">
     
     
         
@@ -93,7 +93,7 @@
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Diagram"><span class="toc-number">1.</span> <span class="toc-text">Diagram</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Action-transfer-Description"><span class="toc-number"></span> <span class="toc-text">| Action         | transfer             | Description</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#"><span class="toc-number">1.</span> <span class="toc-text">:)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#-1"><span class="toc-number">2.</span> <span class="toc-text">:(</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Diagram"><span class="toc-number">1.</span> <span class="toc-text">Diagram</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#"><span class="toc-number">2.</span> <span class="toc-text">:)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#-1"><span class="toc-number">3.</span> <span class="toc-text">:(</span></a></li></ol>
     </div>
   </span>
 </div>
@@ -127,7 +127,36 @@
   
 
   <div class="content" itemprop="articleBody">
-    <h2 id="Diagram"><a href="#Diagram" class="headerlink" title="Diagram"></a>Diagram</h2><h1 id="Action-transfer-Description"><a href="#Action-transfer-Description" class="headerlink" title="| Action         | transfer             | Description"></a>| Action         | transfer             | Description</h1><p> — | :————: | :——————: | —————<br> 1   | get list       | Client <-res- 2="" server="" |="" :token="md5(DEFAULT_TOKEN" +="" id)="" edit,="" add,="" del="" client="" -req-=""> Server | attach :token to request<br> 3   | server process | check before process | compare md5(DEFAULT_TOKEN + id) with :token</-res-></p>
+    <h2 id="Diagram"><a href="#Diagram" class="headerlink" title="Diagram"></a>Diagram</h2><table>
+<thead>
+<tr>
+<th>#</th>
+<th style="text-align:center">Action</th>
+<th style="text-align:center">transfer</th>
+<th>Description                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 1</td>
+<td style="text-align:center">get list</td>
+<td style="text-align:center">Client &lt;-res- Server</td>
+<td>:token = md5(DEFAULT_TOKEN + id)</td>
+</tr>
+<tr>
+<td> 2</td>
+<td style="text-align:center">edit, add, del</td>
+<td style="text-align:center">Client -req-&gt; Server</td>
+<td>attach :token to request        </td>
+</tr>
+<tr>
+<td> 3</td>
+<td style="text-align:center">server process</td>
+<td style="text-align:center">check before process</td>
+<td>compare md5(DEFAULT_TOKEN + id) with :token</td>
+</tr>
+</tbody>
+</table>
 <h2 id=""><a href="#" class="headerlink" title=":)"></a>:)</h2><p> Simple to understand and implement</p>
 <h2 id="-1"><a href="#-1" class="headerlink" title=":("></a>:(</h2><p>  need loop before response</p>
 
@@ -154,7 +183,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Diagram"><span class="toc-number">1.</span> <span class="toc-text">Diagram</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Action-transfer-Description"><span class="toc-number"></span> <span class="toc-text">| Action         | transfer             | Description</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#"><span class="toc-number">1.</span> <span class="toc-text">:)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#-1"><span class="toc-number">2.</span> <span class="toc-text">:(</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Diagram"><span class="toc-number">1.</span> <span class="toc-text">Diagram</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#"><span class="toc-number">2.</span> <span class="toc-text">:)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#-1"><span class="toc-number">3.</span> <span class="toc-text">:(</span></a></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">

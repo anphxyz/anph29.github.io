@@ -12,7 +12,7 @@
 <meta property="og:url" content="https://anph29.github.io/2018/06/21/Javascript-Horror-things/index.html">
 <meta property="og:site_name" content="Code notes &amp; tips">
 <meta property="og:description" content="== horor12345678910111213141 == String(1); // truenew String(1) == new String(1); // false0 == []; // true0 == false; // true[] == false; // true[] == true; // falseconsole.log(0 ? &quot;0 is true&quot; : &quot;0 is">
-<meta property="og:updated_time" content="2018-07-23T03:18:07.275Z">
+<meta property="og:updated_time" content="2018-07-23T03:19:40.390Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Javascript: Horror things">
 <meta name="twitter:description" content="== horor12345678910111213141 == String(1); // truenew String(1) == new String(1); // false0 == []; // true0 == false; // true[] == false; // true[] == true; // falseconsole.log(0 ? &quot;0 is true&quot; : &quot;0 is">
@@ -130,7 +130,43 @@
 
   <div class="content" itemprop="articleBody">
     <h2 id="horor"><a href="#horor" class="headerlink" title="== horor"></a><code>==</code> horor</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> == <span class="built_in">String</span>(<span class="number">1</span>); <span class="comment">// true</span></span><br><span class="line"><span class="keyword">new</span> <span class="built_in">String</span>(<span class="number">1</span>) == <span class="keyword">new</span> <span class="built_in">String</span>(<span class="number">1</span>); <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line"><span class="number">0</span> == []; <span class="comment">// true</span></span><br><span class="line"><span class="number">0</span> == <span class="literal">false</span>; <span class="comment">// true</span></span><br><span class="line">[] == <span class="literal">false</span>; <span class="comment">// true</span></span><br><span class="line">[] == <span class="literal">true</span>; <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">0</span> ? <span class="string">"0 is true"</span> : <span class="string">"0 is false"</span>); <span class="comment">// 0 is false</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log([] ? <span class="string">"[] is true"</span> : <span class="string">"[] is false"</span>); <span class="comment">// [] is true</span></span><br><span class="line"></span><br><span class="line"><span class="number">0</span> == <span class="literal">undefined</span>; <span class="comment">// false</span></span><br><span class="line"><span class="number">0</span> == !!<span class="literal">undefined</span>; <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
-<p><em>Note</em><br> Type      | -&gt;  | detach<br> :–       | :-: | :–<br> String    | -&gt;  | ‘’ ? ‘falsy’ : ‘truth’<br> Number    | -&gt;  | 0orNaN ? ‘falsy’ : ‘truth’<br> Boolean   | -&gt;  | false ? ‘falsy’ : ‘truth’<br> null      | -&gt;  | ‘falsy’<br> undefined | -&gt;  | ‘falsy’                    </p>
+<p><em>Note</em></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Type</th>
+<th style="text-align:center">-&gt;</th>
+<th style="text-align:left">detach                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">String</td>
+<td style="text-align:center">-&gt;</td>
+<td style="text-align:left">‘’ ? ‘falsy’ : ‘truth’     </td>
+</tr>
+<tr>
+<td style="text-align:left">Number</td>
+<td style="text-align:center">-&gt;</td>
+<td style="text-align:left">0orNaN ? ‘falsy’ : ‘truth’ </td>
+</tr>
+<tr>
+<td style="text-align:left">Boolean</td>
+<td style="text-align:center">-&gt;</td>
+<td style="text-align:left">false ? ‘falsy’ : ‘truth’  </td>
+</tr>
+<tr>
+<td style="text-align:left">null</td>
+<td style="text-align:center">-&gt;</td>
+<td style="text-align:left">‘falsy’                    </td>
+</tr>
+<tr>
+<td style="text-align:left">undefined</td>
+<td style="text-align:center">-&gt;</td>
+<td style="text-align:left">‘falsy’                    </td>
+</tr>
+</tbody>
+</table>
 <h2 id="hornor"><a href="#hornor" class="headerlink" title="=== hornor"></a><code>===</code> hornor</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">String</span>(<span class="number">1</span>) === <span class="keyword">new</span> <span class="built_in">String</span>(<span class="number">1</span>); <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line"><span class="literal">NaN</span> === <span class="literal">NaN</span>; <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
 <h2 id="Array-Hornor"><a href="#Array-Hornor" class="headerlink" title="Array Hornor"></a>Array Hornor</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line"><span class="built_in">console</span>.log(a, <span class="string">'length: '</span>,a.length);<span class="comment">//[1, 2, 3] "length: " 3</span></span><br><span class="line">a[<span class="number">-1</span>] = <span class="number">-1</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a, <span class="string">'length: '</span>,a.length);<span class="comment">// [1, 2, 3, -1: -1] "length: " 3</span></span><br><span class="line">a[<span class="number">-2</span>] = <span class="number">-2</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a, <span class="string">'length: '</span>,a.length);<span class="comment">//[1, 2, 3, -1: -1, -2: -2] "length: " 3</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(a[<span class="number">-2</span>]);<span class="comment">//-2</span></span><br></pre></td></tr></table></figure>
   </div>

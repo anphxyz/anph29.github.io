@@ -1005,7 +1005,10 @@ body {
   }
 }
 .post-list {
-  padding: 0;
+  padding: 10px 20px;
+  background: rgba(0,0,0,0.5);
+  margin: 0;
+  border-radius: 5px;
 }
 .post-list .post-item {
   margin-bottom: 1rem;

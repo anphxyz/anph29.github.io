@@ -441,7 +441,7 @@
 }
 html {
   height: 100%;
-  border-top: 2px solid #0af;
+  border-top: 2px solid #fff;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
 }
@@ -449,7 +449,7 @@ body {
   display: flex;
   flex-direction: column;
   background-color: #1d1f21;
-  color: #0af;
+  color: #fff;
   font-weight: 400;
   font-size: 14px;
   font-family: "Menlo", "Meslo LG", monospace;
@@ -481,9 +481,9 @@ body {
   -webkit-hyphens: manual;
 }
 .content a {
-  color: #0af;
+  color: #fff;
   text-decoration: none;
-  background-image: linear-gradient(transparent, transparent 5px, #0af 5px, #0af);
+  background-image: linear-gradient(transparent, transparent 5px, #fff 5px, #fff);
   background-position: bottom;
   background-size: 100% 6px;
   background-repeat: repeat-x;
@@ -570,7 +570,7 @@ body {
 #header .h1 {
   margin-top: 0;
   margin-bottom: 0;
-  color: #0af;
+  color: #fff;
   letter-spacing: 0.01em;
   font-weight: 700;
   font-style: normal;
@@ -803,12 +803,18 @@ body {
   display: none;
 }
 #header-post #toc .toc-level-2 {
-  color: #0af;
+  color: #fff;
   font-size: 0.8rem;
+  margin-bottom: 1px;
+  padding: 0 5px;
 }
-#header-post #toc .toc-level-2:before {
+#header-post #toc:before {
   color: #0af;
   content: "#";
+}
+#header-post #toc .toc-level-2:hover {
+  background: rgba(0,0,0,0.7);
+  border-radius: 3px;
 }
 #header-post #toc .toc-level-3 {
   color: #fff;
@@ -975,7 +981,7 @@ body {
   display: none;
 }
 #footer-post #toc-footer .toc-level-2 {
-  color: #0af;
+  color: #fff;
   font-size: 0.8rem;
 }
 #footer-post #toc-footer .toc-level-2:before {
@@ -1266,14 +1272,14 @@ article .content .caption {
   text-align: center;
 }
 .pagination .page-number {
-  color: #0af;
+  color: #fff;
   font-size: 0.8rem;
 }
 .pagination a {
   padding: 4px 6px;
   border-radius: 5px;
   background-image: none;
-  color: #0af;
+  color: #fff;
   text-decoration: none;
 }
 .pagination a:hover {
@@ -1289,7 +1295,7 @@ article .content .caption {
   border: solid 1px #ccc;
   border-radius: 5px;
   background-color: #1d1f21;
-  color: #0af;
+  color: #fff;
   font-size: 1.2rem;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -1306,7 +1312,7 @@ article .content .caption {
 }
 #search-result a.search-result-title {
   background-image: none;
-  color: #0af;
+  color: #fff;
   text-transform: capitalize;
   font-weight: bold;
   line-height: 1.2;
@@ -1326,7 +1332,7 @@ article .content .caption {
 .search-no-result {
   display: none;
   padding-bottom: 0.5em;
-  color: #0af;
+  color: #fff;
 }
 .highlight {
   background: #474949;

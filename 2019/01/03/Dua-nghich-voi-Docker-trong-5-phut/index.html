@@ -6,17 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="Một số khái niệm cơ bản Docker là gì?Định nghĩa cũng tràn lan trên mạng rồi nên tôi cũng không cần phải copy lại chi cho mệt ha. Giờ tôi sẽ giải thích một cách đơn giản và dân dã nhất để cho ai cũng c">
+    <meta name="description" content="Docker là gì?Định nghĩa cũng tràn lan trên mạng rồi nên tôi cũng không cần phải copy lại chi cho mệt ha. Giờ tôi sẽ giải thích một cách đơn giản và dân dã nhất để cho ai cũng có thể hiểu được! Đầu ti">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Đùa nghịch với Docker trong 5 phút">
 <meta property="og:url" content="https://anph29.github.io/2019/01/03/Dua-nghich-voi-Docker-trong-5-phut/index.html">
 <meta property="og:site_name" content="Code notes &amp; tips">
-<meta property="og:description" content="Một số khái niệm cơ bản Docker là gì?Định nghĩa cũng tràn lan trên mạng rồi nên tôi cũng không cần phải copy lại chi cho mệt ha. Giờ tôi sẽ giải thích một cách đơn giản và dân dã nhất để cho ai cũng c">
+<meta property="og:description" content="Docker là gì?Định nghĩa cũng tràn lan trên mạng rồi nên tôi cũng không cần phải copy lại chi cho mệt ha. Giờ tôi sẽ giải thích một cách đơn giản và dân dã nhất để cho ai cũng có thể hiểu được! Đầu ti">
 <meta property="og:image" content="https://anph29.github.io/images/docker_logo.png">
-<meta property="og:updated_time" content="2019-03-14T07:00:32.292Z">
+<meta property="og:updated_time" content="2019-03-22T02:36:44.240Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Đùa nghịch với Docker trong 5 phút">
-<meta name="twitter:description" content="Một số khái niệm cơ bản Docker là gì?Định nghĩa cũng tràn lan trên mạng rồi nên tôi cũng không cần phải copy lại chi cho mệt ha. Giờ tôi sẽ giải thích một cách đơn giản và dân dã nhất để cho ai cũng c">
+<meta name="twitter:description" content="Docker là gì?Định nghĩa cũng tràn lan trên mạng rồi nên tôi cũng không cần phải copy lại chi cho mệt ha. Giờ tôi sẽ giải thích một cách đơn giản và dân dã nhất để cho ai cũng có thể hiểu được! Đầu ti">
 <meta name="twitter:image" content="https://anph29.github.io/images/docker_logo.png">
     
     
@@ -57,9 +57,9 @@
          
           <li><a href="/">Home</a></li>
          
-          <li><a href="/archives/">Writing</a></li>
+          <li><a href="/archives/">Blog</a></li>
          
-          <li><a href="/about/">About</a></li>
+          <li><a href="/about/">Over mij</a></li>
         
       </ul>
     </span>
@@ -75,10 +75,10 @@
         <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
         <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
       </ul>
-      <span id="i-prev" class="info" style="display:none;">Previous post</span>
-      <span id="i-next" class="info" style="display:none;">Next post</span>
-      <span id="i-top" class="info" style="display:none;">Back to top</span>
-      <span id="i-share" class="info" style="display:none;">Share post</span>
+      <span id="i-prev" class="info" style="display:none;">Vorige post</span>
+      <span id="i-next" class="info" style="display:none;">Volgende post</span>
+      <span id="i-top" class="info" style="display:none;">Naar boven</span>
+      <span id="i-share" class="info" style="display:none;">Deel deze post</span>
     </span>
     <br/>
     <div id="share" style="display: none">
@@ -97,7 +97,7 @@
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Docker-la-gi"><span class="toc-number">1.</span> <span class="toc-text">Docker là gì?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Vay-cau-hoi-dat-ra-la-nguyen-nhan-do-dau"><span class="toc-number">2.</span> <span class="toc-text">Vậy câu hỏi đặt ra là nguyên nhân do đâu?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Docker-compose-la-gi"><span class="toc-number">3.</span> <span class="toc-text">Docker compose là gì?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Create-app-directory"><span class="toc-number">4.</span> <span class="toc-text">Create app directory</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Install-app-dependencies"><span class="toc-number">5.</span> <span class="toc-text">Install app dependencies</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Copy-app-source-code"><span class="toc-number">6.</span> <span class="toc-text">Copy app source code</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Expose-port-and-start-application"><span class="toc-number">7.</span> <span class="toc-text">Expose port and start application</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Create-app-directory-1"><span class="toc-number">8.</span> <span class="toc-text">Create app directory</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Install-app-dependencies-1"><span class="toc-number">9.</span> <span class="toc-text">Install app dependencies</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Copy-app-source-code-1"><span class="toc-number">10.</span> <span class="toc-text">Copy app source code</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Expose-port-and-start-application-1"><span class="toc-number">11.</span> <span class="toc-text">Expose port and start application</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Test-app"><span class="toc-number">12.</span> <span class="toc-text">Test app</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Docker-la-gi"><span class="toc-number">1.</span> <span class="toc-text">Docker là gì?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Vay-cau-hoi-dat-ra-la-nguyen-nhan-do-dau"><span class="toc-number">2.</span> <span class="toc-text">Vậy câu hỏi đặt ra là nguyên nhân do đâu?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Docker-compose-la-gi"><span class="toc-number">3.</span> <span class="toc-text">Docker compose là gì?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Test-app"><span class="toc-number">4.</span> <span class="toc-text">Test app</span></a></li></ol>
     </div>
   </span>
 </div>
@@ -131,7 +131,7 @@
   
 
   <div class="content" itemprop="articleBody">
-    <p><img src="/images/docker_logo.png" alt=""><br>Một số khái niệm cơ bản</p>
+    <p><img src="/images/docker_logo.png" alt=""></p>
 <h1 id="Docker-la-gi"><a href="#Docker-la-gi" class="headerlink" title="Docker là gì?"></a>Docker là gì?</h1><p>Định nghĩa cũng tràn lan trên mạng rồi nên tôi cũng không cần phải copy lại chi cho mệt ha. Giờ tôi sẽ giải thích một cách đơn giản và dân dã nhất để cho ai cũng có thể hiểu được!</p>
 <p>Đầu tiên cùng tưởng tượng rằng bạn và đồng nghiệp của mình đang cùng làm việc trên cùng một dự án. Một ngày đẹp trời đồng nghiệp của bạn bỗng nhiên chạy source code để debug nhưng kết quả lại khác với kết quả trên máy của bạn khi chạy với cùng dữ liệu như nhau.</p>
 <h1 id="Vay-cau-hoi-dat-ra-la-nguyen-nhan-do-dau"><a href="#Vay-cau-hoi-dat-ra-la-nguyen-nhan-do-dau" class="headerlink" title="Vậy câu hỏi đặt ra là nguyên nhân do đâu?"></a>Vậy câu hỏi đặt ra là nguyên nhân do đâu?</h1><p>Có thể có một số nguyên nhân ví dụ như hệ điều hành của bạn và đồng nghiệp không giống nhau, verison của library trên máy bạn và trên máy của đồng nghiệp khác nhau, etc.</p>
@@ -144,33 +144,22 @@
 <p>Và để cho các bạn có thể thoả sức nghịch Docker thì tôi làm sẵn luôn một ứng dụng NodeJS cơ bản. Các bạn có thể checkout code như sau.</p>
 <p>git clone <a href="https://github.com/codeaholicguy/nodejs-mongodb-docker-example.git" target="_blank" rel="noopener">https://github.com/codeaholicguy/nodejs-mongodb-docker-example.git</a></p>
 <p>Giới thiệu sơ qua thì đây là RESTful API lưu danh bạ gồm 2 endpoint chính là hàm POST để lưu danh bạ và hàm GET để lấy danh bạ (như hình). Các bạn có thể nghịch thêm gì tùy ý.</p>
-<p>Danh báº¡</p>
 <p>À quên, các bạn có thể config mongo url bằng cách thêm environment variable MONGO_URL hay dùng file .env đã được setup sẵn.</p>
 <p>Build docker image của ứng dụng NodeJS vừa được setup<br>Đây mới là phần chính của bài viết nè!</p>
 <p>Để tạo một Docker image, chúng ta cần tạo một file gọi là Dockerfile ngay tại thư mục root của project.</p>
-<p>FROM node:8</p>
-<h1 id="Create-app-directory"><a href="#Create-app-directory" class="headerlink" title="Create app directory"></a>Create app directory</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">WORKDIR /usr/src/app</span><br></pre></td></tr></table></figure>
-<h1 id="Install-app-dependencies"><a href="#Install-app-dependencies" class="headerlink" title="Install app dependencies"></a>Install app dependencies</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">COPY package*.json ./</span><br><span class="line">RUN npm install</span><br></pre></td></tr></table></figure>
-<h1 id="Copy-app-source-code"><a href="#Copy-app-source-code" class="headerlink" title="Copy app source code"></a>Copy app source code</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">COPY . .</span><br></pre></td></tr></table></figure>
-<h1 id="Expose-port-and-start-application"><a href="#Expose-port-and-start-application" class="headerlink" title="Expose port and start application"></a>Expose port and start application</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">EXPOSE 3000</span><br><span class="line">CMD [ &quot;npm&quot;, &quot;start&quot; ]</span><br><span class="line"></span><br><span class="line">FROM node:8</span><br></pre></td></tr></table></figure>
-<h1 id="Create-app-directory-1"><a href="#Create-app-directory-1" class="headerlink" title="Create app directory"></a>Create app directory</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">WORKDIR /usr/src/app</span><br></pre></td></tr></table></figure>
-<h1 id="Install-app-dependencies-1"><a href="#Install-app-dependencies-1" class="headerlink" title="Install app dependencies"></a>Install app dependencies</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">COPY package*.json ./</span><br><span class="line">RUN npm install</span><br></pre></td></tr></table></figure>
-<h1 id="Copy-app-source-code-1"><a href="#Copy-app-source-code-1" class="headerlink" title="Copy app source code"></a>Copy app source code</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">COPY . .</span><br></pre></td></tr></table></figure>
-<h1 id="Expose-port-and-start-application-1"><a href="#Expose-port-and-start-application-1" class="headerlink" title="Expose port and start application"></a>Expose port and start application</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">EXPOSE 3000</span><br><span class="line">CMD [ &quot;npm&quot;, &quot;start&quot; ]</span><br></pre></td></tr></table></figure>
-<p>Các lệnh khá rõ ràng và dễ hiểu, các bạn có thể đọc thêm document của Docker để biêt thêm chi tiết. Sau khi đã có Dockerfile, các bạn có thể build image bằng lệnh sau.</p>
-<p>$ docker build -t awesome-app .</p>
-<p>Như vậy, các bạn đã có một Docker image cho source code hiện tại, và các bạn cũng có thể chạy thử image bằng lệnh</p>
-<p>$ docker run awesome-app</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">FROM node:8</span><br><span class="line"><span class="comment"># Create app directory</span></span><br><span class="line">WORKDIR /usr/src/app</span><br><span class="line"></span><br><span class="line"><span class="comment"># Install app dependencies</span></span><br><span class="line">COPY package*.json ./</span><br><span class="line">RUN npm install</span><br><span class="line"></span><br><span class="line"><span class="comment"># Copy app source code</span></span><br><span class="line">COPY . .</span><br><span class="line"><span class="comment"># Expose port and start application</span></span><br></pre></td></tr></table></figure>
+<p>EXPOSE 3000<br>CMD [ “npm”, “start” ]<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Các lệnh khá rõ ràng và dễ hiểu, các bạn có thể đọc thêm document của Docker để biêt thêm chi tiết. Sau khi đã có Dockerfile, các bạn có thể build image bằng lệnh sau.</span><br><span class="line">``` bash</span><br><span class="line">$ docker build -t awesome-app .</span><br></pre></td></tr></table></figure></p>
+<p>Như vậy, các bạn đã có một Docker image cho source code hiện tại, và các bạn cũng có thể chạy thử image bằng lệnh<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker run awesome-app</span><br></pre></td></tr></table></figure></p>
 <p>Tuy nhiên các bạn sẽ nhận ra là chạy không được, do ứng dụng của chúng ta cần thêm MongoDB để lưu trữ dữ liệu nữa, vậy làm thế nào để setup, cùng bước sang phần tiếp theo nhé!</p>
 <p>Viết file docker-compose.yml<br>Các bạn tạo file docker-compose.yml, file này sẽ chứa thông tin của môi trường Docker.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">version: &quot;3&quot;</span><br><span class="line">services:</span><br><span class="line">  app:</span><br><span class="line">    build: .</span><br><span class="line">    ports:</span><br><span class="line">      - &quot;3000:3000&quot;</span><br><span class="line">    environment:</span><br><span class="line">      - MONGO_URL=mongodb://mongo:27017</span><br><span class="line">    depends_on:</span><br><span class="line">      - mongo</span><br><span class="line">  mongo:</span><br><span class="line">    image: mongo</span><br><span class="line">    ports:</span><br><span class="line">      - &quot;27017:27017&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">"3"</span></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line"><span class="attr">  app:</span></span><br><span class="line"><span class="attr">    build:</span> <span class="string">.</span></span><br><span class="line"><span class="attr">    ports:</span></span><br><span class="line"><span class="bullet">      -</span> <span class="string">"3000:3000"</span></span><br><span class="line"><span class="attr">    environment:</span></span><br><span class="line"><span class="bullet">      -</span> <span class="string">MONGO_URL=mongodb://mongo:27017</span></span><br><span class="line"><span class="attr">    depends_on:</span></span><br><span class="line"><span class="bullet">      -</span> <span class="string">mongo</span></span><br><span class="line"><span class="attr">  mongo:</span></span><br><span class="line"><span class="attr">    image:</span> <span class="string">mongo</span></span><br><span class="line"><span class="attr">    ports:</span></span><br><span class="line"><span class="bullet">      -</span> <span class="string">"27017:27017"</span></span><br></pre></td></tr></table></figure>
 <p>Trong file này chúng ta định nghĩa hai Docker.</p>
 <p>app: đây chính là ứng dụng NodeJS của chúng ta.<br>mongo: chính là database MongoDB map với port như định nghĩa.<br>Mặc định app sẽ gọi mongo bằng cách sử dụng tên của service, như các bạn có thể thấy env MONGO_URL chúng ta sử dụng mongo cho phần hostname.</p>
-<p>Sau khi các bạn đã có file docker-compose.yml, các bạn có thể chạy nó lên bằng lệnh sau.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker-compose up</span><br></pre></td></tr></table></figure></p>
+<p>Sau khi các bạn đã có file docker-compose.yml, các bạn có thể chạy nó lên bằng lệnh sau.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker-compose up</span><br></pre></td></tr></table></figure></p>
 <p>Giờ thử vào <a href="http://localhost:3000/directory" target="_blank" rel="noopener">http://localhost:3000/directory</a> để test xem mọi thứ đã chạy ổn chưa nhé.</p>
 <h1 id="Test-app"><a href="#Test-app" class="headerlink" title="Test app"></a>Test app</h1><p>Lưu trữ dữ liệu<br>Với setup như trên, mỗi lần xoá mongo image và re-build lại thì dữ liệu trước đó sẽ mất hết, bởi vì dữ liệu được lưu trữ trong mongo container. Vậy làm sao để dữ liệu được giữ nguyên?</p>
 <p>Để làm chuyện này, chúng ta sử dụng một kĩ thuật gọi là volume, để làm cho storage của container sẽ trở về một thư mục trên máy tính thật. Để làm chuyện này thì cũng khá đơn giản thôi. Các bạn chỉnh sửa file docker-compose.yml như sau.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">version: &quot;3&quot;</span><br><span class="line">services:</span><br><span class="line">  app:</span><br><span class="line">    build: .</span><br><span class="line">    ports:</span><br><span class="line">      - &quot;3000:3000&quot;</span><br><span class="line">    environment:</span><br><span class="line">      - MONGO_URL=mongodb://mongo:27017</span><br><span class="line">    depends_on:</span><br><span class="line">      - mongo</span><br><span class="line">  mongo:</span><br><span class="line">    image: mongo</span><br><span class="line">    ports:</span><br><span class="line">      - &quot;27017:27017&quot;</span><br><span class="line">    volumes:</span><br><span class="line">      - mongo_data:/data/db</span><br><span class="line">volumes:</span><br><span class="line">  mongo_data:</span><br></pre></td></tr></table></figure>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">"3"</span></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line"><span class="attr">  app:</span></span><br><span class="line"><span class="attr">    build:</span> <span class="string">.</span></span><br><span class="line"><span class="attr">    ports:</span></span><br><span class="line"><span class="bullet">      -</span> <span class="string">"3000:3000"</span></span><br><span class="line"><span class="attr">    environment:</span></span><br><span class="line"><span class="bullet">      -</span> <span class="string">MONGO_URL=mongodb://mongo:27017</span></span><br><span class="line"><span class="attr">    depends_on:</span></span><br><span class="line"><span class="bullet">      -</span> <span class="string">mongo</span></span><br><span class="line"><span class="attr">  mongo:</span></span><br><span class="line"><span class="attr">    image:</span> <span class="string">mongo</span></span><br><span class="line"><span class="attr">    ports:</span></span><br><span class="line"><span class="bullet">      -</span> <span class="string">"27017:27017"</span></span><br><span class="line"><span class="attr">    volumes:</span></span><br><span class="line"><span class="attr">      - mongo_data:</span><span class="string">/data/db</span></span><br><span class="line"><span class="attr">volumes:</span></span><br><span class="line"><span class="attr">  mongo_data:</span></span><br></pre></td></tr></table></figure>
 <p>Như các bạn có thể thấy, chúng ta thêm volumes vào và map nó với thư mục /data/db trong mongo container. Vậy thực sự thư mục dữ liệu này nằm ở đâu?</p>
 <p>Các bạn chạy lệnh sau.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ docker inspect -f ‘&#123;&#123; .Mounts &#125;&#125;’ $&#123;container_id&#125;</span><br><span class="line">[&#123;volume nodejs-mongodb-docker-example_mongo_data /var/lib/docker/volumes/nodejs-mongodb-docker-example_mongo_data/_data /data/db local rw true &#125;]</span><br></pre></td></tr></table></figure></p>
 <p>Trong đó container_id chính là id của mongo container, các bạn có thể lấy nó thông qua lệnh docker ps. Kết quả trả về các bạn có thể thấy có ba thành phần, phần đầu tiên chính là volume name, phần thứ hai chính là đường dẫn thực tế, phần thứ ba chính là mapping trên docker container file system. Cụ thể hơn các bạn có thể xem document của Docker về phần này.</p>
@@ -198,15 +187,15 @@
          
           <li><a href="/">Home</a></li>
          
-          <li><a href="/archives/">Writing</a></li>
+          <li><a href="/archives/">Blog</a></li>
          
-          <li><a href="/about/">About</a></li>
+          <li><a href="/about/">Over mij</a></li>
         
       </ul>
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Docker-la-gi"><span class="toc-number">1.</span> <span class="toc-text">Docker là gì?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Vay-cau-hoi-dat-ra-la-nguyen-nhan-do-dau"><span class="toc-number">2.</span> <span class="toc-text">Vậy câu hỏi đặt ra là nguyên nhân do đâu?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Docker-compose-la-gi"><span class="toc-number">3.</span> <span class="toc-text">Docker compose là gì?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Create-app-directory"><span class="toc-number">4.</span> <span class="toc-text">Create app directory</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Install-app-dependencies"><span class="toc-number">5.</span> <span class="toc-text">Install app dependencies</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Copy-app-source-code"><span class="toc-number">6.</span> <span class="toc-text">Copy app source code</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Expose-port-and-start-application"><span class="toc-number">7.</span> <span class="toc-text">Expose port and start application</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Create-app-directory-1"><span class="toc-number">8.</span> <span class="toc-text">Create app directory</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Install-app-dependencies-1"><span class="toc-number">9.</span> <span class="toc-text">Install app dependencies</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Copy-app-source-code-1"><span class="toc-number">10.</span> <span class="toc-text">Copy app source code</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Expose-port-and-start-application-1"><span class="toc-number">11.</span> <span class="toc-text">Expose port and start application</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Test-app"><span class="toc-number">12.</span> <span class="toc-text">Test app</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Docker-la-gi"><span class="toc-number">1.</span> <span class="toc-text">Docker là gì?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Vay-cau-hoi-dat-ra-la-nguyen-nhan-do-dau"><span class="toc-number">2.</span> <span class="toc-text">Vậy câu hỏi đặt ra là nguyên nhân do đâu?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Docker-compose-la-gi"><span class="toc-number">3.</span> <span class="toc-text">Docker compose là gì?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Test-app"><span class="toc-number">4.</span> <span class="toc-text">Test app</span></a></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
@@ -227,8 +216,8 @@
 
     <div id="actions-footer">
         <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
-        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
-        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> Inhoudsopgave</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Deel</a>
         <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
     </div>
 
@@ -246,9 +235,9 @@
          
           <li><a href="/">Home</a></li>
          
-          <li><a href="/archives/">Writing</a></li>
+          <li><a href="/archives/">Blog</a></li>
          
-          <li><a href="/about/">About</a></li>
+          <li><a href="/about/">Over mij</a></li>
         
       </ul>
     </nav>

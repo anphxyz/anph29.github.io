@@ -7,14 +7,15 @@
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="description" content="TECHNIQUE commander (npm install commander –save-dev) singleton pattern fs to create and remove file  CODE1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515">
+<meta name="keywords" content="nodejs">
 <meta property="og:type" content="article">
-<meta property="og:title" content="nodeJS CLI tool with example Make Module">
+<meta property="og:title" content="nodeJS CLI Tool With Example Make Module">
 <meta property="og:url" content="https://anph29.github.io/2018/05/17/nodejs-cli-tool-with-example-make-module/index.html">
 <meta property="og:site_name" content="Code notes &amp; tips">
 <meta property="og:description" content="TECHNIQUE commander (npm install commander –save-dev) singleton pattern fs to create and remove file  CODE1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515">
-<meta property="og:updated_time" content="2018-05-17T03:29:50.995Z">
+<meta property="og:updated_time" content="2019-03-27T03:38:34.873Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="nodeJS CLI tool with example Make Module">
+<meta name="twitter:title" content="nodeJS CLI Tool With Example Make Module">
 <meta name="twitter:description" content="TECHNIQUE commander (npm install commander –save-dev) singleton pattern fs to create and remove file  CODE1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515">
     
     
@@ -35,7 +36,7 @@
         
     
     <!-- title -->
-    <title>nodeJS CLI tool with example Make Module</title>
+    <title>nodeJS CLI Tool With Example Make Module</title>
     <!-- styles -->
     <link rel="stylesheet" href="/css/style.css">
     <!-- rss -->
@@ -53,11 +54,19 @@
     <span id="nav">
       <ul>
          
-          <li><a href="/">Home</a></li>
+          <li><a href="/categories/javascript">javascript</a></li>
          
-          <li><a href="/archives/">Writing</a></li>
+          <li><a href="/categories/python">python</a></li>
          
-          <li><a href="/about/">About</a></li>
+          <li><a href="/categories/docker">docker</a></li>
+         
+          <li><a href="/categories/algorithm">algorithm</a></li>
+         
+          <li><a href="/categories/git">git</a></li>
+         
+          <li><a href="/categories/nocode">nocode</a></li>
+         
+          <li><a href="/about/">A propos</a></li>
         
       </ul>
     </span>
@@ -73,24 +82,24 @@
         <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
         <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
       </ul>
-      <span id="i-prev" class="info" style="display:none;">Previous post</span>
-      <span id="i-next" class="info" style="display:none;">Next post</span>
-      <span id="i-top" class="info" style="display:none;">Back to top</span>
-      <span id="i-share" class="info" style="display:none;">Share post</span>
+      <span id="i-prev" class="info" style="display:none;">Article précédent</span>
+      <span id="i-next" class="info" style="display:none;">Article suivant</span>
+      <span id="i-top" class="info" style="display:none;">Retour au début</span>
+      <span id="i-share" class="info" style="display:none;">Partager cette article</span>
     </span>
     <br/>
     <div id="share" style="display: none">
       <ul>
   <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://anph29.github.io/2018/05/17/nodejs-cli-tool-with-example-make-module/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=https://anph29.github.io/2018/05/17/nodejs-cli-tool-with-example-make-module/&text=nodeJS CLI tool with example Make Module"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://anph29.github.io/2018/05/17/nodejs-cli-tool-with-example-make-module/&title=nodeJS CLI tool with example Make Module"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://anph29.github.io/2018/05/17/nodejs-cli-tool-with-example-make-module/&is_video=false&description=nodeJS CLI tool with example Make Module"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=nodeJS CLI tool with example Make Module&body=Check out this article: https://anph29.github.io/2018/05/17/nodejs-cli-tool-with-example-make-module/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=https://anph29.github.io/2018/05/17/nodejs-cli-tool-with-example-make-module/&title=nodeJS CLI tool with example Make Module"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=https://anph29.github.io/2018/05/17/nodejs-cli-tool-with-example-make-module/&title=nodeJS CLI tool with example Make Module"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://anph29.github.io/2018/05/17/nodejs-cli-tool-with-example-make-module/&title=nodeJS CLI tool with example Make Module"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=https://anph29.github.io/2018/05/17/nodejs-cli-tool-with-example-make-module/&title=nodeJS CLI tool with example Make Module"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://anph29.github.io/2018/05/17/nodejs-cli-tool-with-example-make-module/&name=nodeJS CLI tool with example Make Module&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://anph29.github.io/2018/05/17/nodejs-cli-tool-with-example-make-module/&text=nodeJS CLI Tool With Example Make Module"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://anph29.github.io/2018/05/17/nodejs-cli-tool-with-example-make-module/&title=nodeJS CLI Tool With Example Make Module"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://anph29.github.io/2018/05/17/nodejs-cli-tool-with-example-make-module/&is_video=false&description=nodeJS CLI Tool With Example Make Module"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=nodeJS CLI Tool With Example Make Module&body=Check out this article: https://anph29.github.io/2018/05/17/nodejs-cli-tool-with-example-make-module/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://anph29.github.io/2018/05/17/nodejs-cli-tool-with-example-make-module/&title=nodeJS CLI Tool With Example Make Module"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://anph29.github.io/2018/05/17/nodejs-cli-tool-with-example-make-module/&title=nodeJS CLI Tool With Example Make Module"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://anph29.github.io/2018/05/17/nodejs-cli-tool-with-example-make-module/&title=nodeJS CLI Tool With Example Make Module"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://anph29.github.io/2018/05/17/nodejs-cli-tool-with-example-make-module/&title=nodeJS CLI Tool With Example Make Module"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://anph29.github.io/2018/05/17/nodejs-cli-tool-with-example-make-module/&name=nodeJS CLI Tool With Example Make Module&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -107,7 +116,7 @@
   <header>
     
     <h1 class="posttitle" itemprop="name headline">
-        nodeJS CLI tool with example Make Module
+        nodeJS CLI Tool With Example Make Module
     </h1>
 
 
@@ -123,6 +132,11 @@
 
 
       
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/nodejs/">nodejs</a>
+    </div>
+
 
     </div>
   </header>
@@ -149,11 +163,19 @@
     <div id="nav-footer" style="display: none">
       <ul>
          
-          <li><a href="/">Home</a></li>
+          <li><a href="/categories/javascript">javascript</a></li>
          
-          <li><a href="/archives/">Writing</a></li>
+          <li><a href="/categories/python">python</a></li>
          
-          <li><a href="/about/">About</a></li>
+          <li><a href="/categories/docker">docker</a></li>
+         
+          <li><a href="/categories/algorithm">algorithm</a></li>
+         
+          <li><a href="/categories/git">git</a></li>
+         
+          <li><a href="/categories/nocode">nocode</a></li>
+         
+          <li><a href="/about/">A propos</a></li>
         
       </ul>
     </div>
@@ -165,24 +187,24 @@
     <div id="share-footer" style="display: none">
       <ul>
   <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://anph29.github.io/2018/05/17/nodejs-cli-tool-with-example-make-module/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=https://anph29.github.io/2018/05/17/nodejs-cli-tool-with-example-make-module/&text=nodeJS CLI tool with example Make Module"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://anph29.github.io/2018/05/17/nodejs-cli-tool-with-example-make-module/&title=nodeJS CLI tool with example Make Module"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://anph29.github.io/2018/05/17/nodejs-cli-tool-with-example-make-module/&is_video=false&description=nodeJS CLI tool with example Make Module"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=nodeJS CLI tool with example Make Module&body=Check out this article: https://anph29.github.io/2018/05/17/nodejs-cli-tool-with-example-make-module/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=https://anph29.github.io/2018/05/17/nodejs-cli-tool-with-example-make-module/&title=nodeJS CLI tool with example Make Module"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=https://anph29.github.io/2018/05/17/nodejs-cli-tool-with-example-make-module/&title=nodeJS CLI tool with example Make Module"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://anph29.github.io/2018/05/17/nodejs-cli-tool-with-example-make-module/&title=nodeJS CLI tool with example Make Module"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=https://anph29.github.io/2018/05/17/nodejs-cli-tool-with-example-make-module/&title=nodeJS CLI tool with example Make Module"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://anph29.github.io/2018/05/17/nodejs-cli-tool-with-example-make-module/&name=nodeJS CLI tool with example Make Module&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://anph29.github.io/2018/05/17/nodejs-cli-tool-with-example-make-module/&text=nodeJS CLI Tool With Example Make Module"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://anph29.github.io/2018/05/17/nodejs-cli-tool-with-example-make-module/&title=nodeJS CLI Tool With Example Make Module"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://anph29.github.io/2018/05/17/nodejs-cli-tool-with-example-make-module/&is_video=false&description=nodeJS CLI Tool With Example Make Module"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=nodeJS CLI Tool With Example Make Module&body=Check out this article: https://anph29.github.io/2018/05/17/nodejs-cli-tool-with-example-make-module/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://anph29.github.io/2018/05/17/nodejs-cli-tool-with-example-make-module/&title=nodeJS CLI Tool With Example Make Module"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://anph29.github.io/2018/05/17/nodejs-cli-tool-with-example-make-module/&title=nodeJS CLI Tool With Example Make Module"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://anph29.github.io/2018/05/17/nodejs-cli-tool-with-example-make-module/&title=nodeJS CLI Tool With Example Make Module"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://anph29.github.io/2018/05/17/nodejs-cli-tool-with-example-make-module/&title=nodeJS CLI Tool With Example Make Module"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://anph29.github.io/2018/05/17/nodejs-cli-tool-with-example-make-module/&name=nodeJS CLI Tool With Example Make Module&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
 
     <div id="actions-footer">
         <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
-        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
-        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
-        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> Table des matière</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Partager</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Début</a>
     </div>
 
   </div>
@@ -197,11 +219,19 @@
     <nav>
       <ul>
          
-          <li><a href="/">Home</a></li>
+          <li><a href="/categories/javascript">javascript</a></li>
          
-          <li><a href="/archives/">Writing</a></li>
+          <li><a href="/categories/python">python</a></li>
          
-          <li><a href="/about/">About</a></li>
+          <li><a href="/categories/docker">docker</a></li>
+         
+          <li><a href="/categories/algorithm">algorithm</a></li>
+         
+          <li><a href="/categories/git">git</a></li>
+         
+          <li><a href="/categories/nocode">nocode</a></li>
+         
+          <li><a href="/about/">A propos</a></li>
         
       </ul>
     </nav>

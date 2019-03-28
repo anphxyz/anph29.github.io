@@ -7,13 +7,13 @@
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="description" content="This note write some difference between JS with Python from a JS developer learning Pythoncomment in code(*) nice tutorial resource: https://data-flair.training/blogs/python-tutorials-home/  js 12345/">
-<meta name="keywords" content="python,javascript">
+<meta name="keywords" content="javascript,python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Compare Python With Javascript">
 <meta property="og:url" content="https://anph29.github.io/2019/03/27/Compare-Python-with-Javascript/index.html">
 <meta property="og:site_name" content="Code notes &amp; tips">
 <meta property="og:description" content="This note write some difference between JS with Python from a JS developer learning Pythoncomment in code(*) nice tutorial resource: https://data-flair.training/blogs/python-tutorials-home/  js 12345/">
-<meta property="og:updated_time" content="2019-03-28T02:04:25.983Z">
+<meta property="og:updated_time" content="2019-03-28T04:38:32.636Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Compare Python With Javascript">
 <meta name="twitter:description" content="This note write some difference between JS with Python from a JS developer learning Pythoncomment in code(*) nice tutorial resource: https://data-flair.training/blogs/python-tutorials-home/  js 12345/">
@@ -73,6 +73,8 @@
     <br/>
     <span id="actions">
       <ul>
+        
+        <li><a class="icon" href="/2019/03/28/Python-Reserved-keywords/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
         
         
         <li><a class="icon" href="/2019/03/26/Python-Operators-Prcedence/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
@@ -185,11 +187,19 @@
 </ul>
 </li>
 <li>Tuple<ul>
-<li>like list but use parenthesis <code>()</code> instead of square bracket <code>[]</code> (ex: <code>a = (1, 2 , 3)</code>)</li>
+<li>like <code>list</code> but use parenthesis <code>()</code> instead of square bracket <code>[]</code> (ex: <code>a = (1, 2 , 3)</code>)</li>
 <li>fixed size and immutable</li>
 </ul>
 </li>
-<li>Dictionary<ul>
+<li><p>Set</p>
+<ul>
+<li>like <code>list</code> but use curly braces <code>{}</code> instead of square bracket <code>[]</code> (ex: <code>a = {1, 2 , 3}</code>)</li>
+<li>dynamic, mutable and unique value<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">lst = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">3</span>] <span class="comment"># 1 list with duplicated with `2`</span></span><br><span class="line">st = set(lst)</span><br><span class="line"><span class="comment">#or</span></span><br><span class="line">st = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">3</span>&#125; </span><br><span class="line"><span class="keyword">print</span> st <span class="comment"># -&gt; set([1, 2, 3])</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>Dictionary</p>
+<ul>
 <li>like json in js <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">room_num = &#123;<span class="string">'john'</span>: <span class="number">425</span>, <span class="string">'tom'</span>: <span class="number">212</span>&#125;</span><br><span class="line">room_num[<span class="string">'john'</span>] = <span class="number">645</span>  <span class="comment"># set the value associated with the 'john' key to 645</span></span><br><span class="line"><span class="keyword">print</span> (room_num[<span class="string">'tom'</span>]) <span class="comment"># print the value of the 'tom' key.</span></span><br><span class="line">room_num[<span class="string">'isaac'</span>] = <span class="number">345</span> <span class="comment"># Add a new key 'isaac' with the associated value</span></span><br><span class="line"><span class="keyword">print</span> (room_num.keys()) <span class="comment"># print out a list of keys in the dictionary</span></span><br><span class="line"><span class="keyword">print</span> (<span class="string">'isaac'</span> <span class="keyword">in</span> room_num) <span class="comment"># test to see if 'issac' is in the dictionary.  This returns true.</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>

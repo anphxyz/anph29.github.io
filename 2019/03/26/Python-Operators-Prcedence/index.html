@@ -6,17 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="Python Operators PrecedenceThe following table lists all operators from highest precedence to lowest.    No Operator Description      1 ** Exponentiation (raise to the power)   2 ~ + - Complement, una">
+    <meta name="description" content="Python Operators PrecedenceThe following table lists all operators from highest precedence to lowest.    No Operator Description      1 () (Highest precedence)    Parentheses (grouping)   2 f(args…) F">
 <meta name="keywords" content="python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python Operators Prcedence">
 <meta property="og:url" content="https://anph29.github.io/2019/03/26/Python-Operators-Prcedence/index.html">
 <meta property="og:site_name" content="Code notes &amp; tips">
-<meta property="og:description" content="Python Operators PrecedenceThe following table lists all operators from highest precedence to lowest.    No Operator Description      1 ** Exponentiation (raise to the power)   2 ~ + - Complement, una">
-<meta property="og:updated_time" content="2019-03-27T03:17:54.151Z">
+<meta property="og:description" content="Python Operators PrecedenceThe following table lists all operators from highest precedence to lowest.    No Operator Description      1 () (Highest precedence)    Parentheses (grouping)   2 f(args…) F">
+<meta property="og:updated_time" content="2019-03-28T08:04:19.820Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python Operators Prcedence">
-<meta name="twitter:description" content="Python Operators PrecedenceThe following table lists all operators from highest precedence to lowest.    No Operator Description      1 ** Exponentiation (raise to the power)   2 ~ + - Complement, una">
+<meta name="twitter:description" content="Python Operators PrecedenceThe following table lists all operators from highest precedence to lowest.    No Operator Description      1 () (Highest precedence)    Parentheses (grouping)   2 f(args…) F">
     
     
         
@@ -155,73 +155,100 @@
 <tbody>
 <tr>
 <td>1</td>
-<td>**</td>
-<td>Exponentiation (raise to the power)</td>
+<td>()</td>
+<td>(Highest precedence)    Parentheses (grouping)</td>
 </tr>
 <tr>
 <td>2</td>
-<td>~ + -</td>
-<td>Complement, unary plus and minus (method names for the last two are +@ and -@)</td>
+<td>f(args…)</td>
+<td>Function call</td>
 </tr>
 <tr>
 <td>3</td>
-<td>* / % //</td>
-<td>Multiply, divide, modulo and floor division</td>
+<td>(expressions…), [expressions…], {key: value…}, {expressions…}</td>
+<td>Binding or tuple display, ist display, dictionary display, set display</td>
 </tr>
 <tr>
 <td>4</td>
-<td>+ -</td>
-<td>Addition and subtraction</td>
+<td>x[index], x[index:index], x(arguments), x.attribute</td>
+<td>Subscription, slicing, call, attribute reference</td>
 </tr>
 <tr>
 <td>5</td>
-<td>&gt;&gt; &lt;&lt;</td>
-<td>Right and left bitwise shift</td>
+<td>await x</td>
+<td>Await expression</td>
 </tr>
 <tr>
 <td>6</td>
-<td>&amp;</td>
-<td>Bitwise ‘AND’</td>
+<td>**</td>
+<td>Exponentiation</td>
 </tr>
 <tr>
 <td>7</td>
-<td>^ \</td>
-<td></td>
-<td>Bitwise exclusive ‘OR’ and regular ‘OR’</td>
+<td>+x, –x, ~x</td>
+<td>Positive, negative, bitwise NOT</td>
 </tr>
 <tr>
 <td>8</td>
-<td>&lt;= &lt; &gt; &gt;=</td>
-<td>Comparison operators</td>
+<td>*, @, /, //, %</td>
+<td>Multiplication, division, remainder</td>
 </tr>
 <tr>
 <td>9</td>
-<td>&lt;&gt; == !=</td>
-<td>Equality operators</td>
+<td>+, –</td>
+<td>Addition, subtraction</td>
 </tr>
 <tr>
 <td>10</td>
-<td>= %= /= //= -= += *= **=</td>
-<td>Assignment operators</td>
+<td>&lt;&lt;, &gt;&gt;</td>
+<td>Bitwise shifts</td>
 </tr>
 <tr>
 <td>11</td>
-<td>is \</td>
-<td>is not</td>
-<td>Identity operators</td>
+<td>&amp;</td>
+<td>Bitwise AND</td>
 </tr>
 <tr>
 <td>12</td>
-<td>in \</td>
-<td>not in</td>
-<td>Membership operators</td>
+<td>^</td>
+<td>Bitwise XOR</td>
 </tr>
 <tr>
 <td>13</td>
-<td>not \</td>
-<td>or \</td>
+<td>\</td>
+<td></td>
+<td>Bitwise OR</td>
+</tr>
+<tr>
+<td>14</td>
+<td>in, not in, is, is not, &lt;, &lt;=,  &gt;, &gt;=,1</td>
+<td>&lt;&gt;, !=, ==</td>
+<td>Comparisons, membership, identity</td>
+</tr>
+<tr>
+<td>15</td>
+<td>not x</td>
+<td>Boolean NOT</td>
+</tr>
+<tr>
+<td>16</td>
 <td>and</td>
-<td>Logical operators</td>
+<td>Boolean AND</td>
+</tr>
+<tr>
+<td>17</td>
+<td>or</td>
+<td>Boolean OR</td>
+</tr>
+<tr>
+<td>18</td>
+<td>if- else</td>
+<td>Conditional expression</td>
+</tr>
+<tr>
+<td>19</td>
+<td>lambda(Lowest precedence)</td>
+<td>Lambda expression</td>
 </tr>
 </tbody>
 </table>

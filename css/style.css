@@ -588,10 +588,10 @@ body {
   display: inline-block;
   float: left;
   margin-right: 20px;
-  width: 180px;
-  height: 180px;
+  width: 128px;
+  height: 128px;
   border-radius: 5px;
-  background-size: 180px 180px;
+  background-size: 128px 128px;
   background-repeat: no-repeat;
 }
 #header #nav {
@@ -639,8 +639,8 @@ body {
 }
 @media screen and (max-width: 480px) {
   #header #title {
-    padding-top: 74px;
-    padding-bottom: 74px;
+    padding-top: 48px;
+    padding-bottom: 48px;
   }
   #header #nav ul a:hover {
     background: none;
@@ -660,7 +660,7 @@ body {
   }
   #header #nav li:not(:first-child) {
     padding-top: 1rem;
-    padding-left: 200px;
+    padding-left: 148px;
     font-size: 1rem;
   }
 }

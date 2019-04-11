@@ -6,13 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta property="og:type" content="website">
+    <meta name="description" content="window.onload = () =&amp;gt; {     const century = y =&amp;gt; Math.floor(y / 100);     // hàm tính tháng cho công thức zeller     const month = m =&amp;gt; m &amp;lt; 3 ? m + 12 : m - 2     // hàm tính năm trong thể kỷ">
+<meta property="og:type" content="website">
 <meta property="og:title" content="Code notes &amp; tips">
-<meta property="og:url" content="https://anph29.github.io/archives/2019/01/index.html">
+<meta property="og:url" content="https://anph29.github.io/schedule/index.html">
 <meta property="og:site_name" content="Code notes &amp; tips">
+<meta property="og:description" content="window.onload = () =&amp;gt; {     const century = y =&amp;gt; Math.floor(y / 100);     // hàm tính tháng cho công thức zeller     const month = m =&amp;gt; m &amp;lt; 3 ? m + 12 : m - 2     // hàm tính năm trong thể kỷ">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-04-11T03:14:38.093Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Code notes &amp; tips">
+<meta name="twitter:description" content="window.onload = () =&amp;gt; {     const century = y =&amp;gt; Math.floor(y / 100);     // hàm tính tháng cho công thức zeller     const month = m =&amp;gt; m &amp;lt; 3 ? m + 12 : m - 2     // hàm tính năm trong thể kỷ">
     
     
         
@@ -80,57 +84,58 @@
 </header>
 
         
-        <div id="archive">
-  <ul class="post-list">
-    
-    
-    
-      
-      
-      
-      
-        <h2>2019</h2>
-      
-      <li class="post-item">
-        
-    <div class="meta">
-        <time datetime="2019-01-03T10:34:58.000Z" itemprop="datePublished">2019-01-03</time>
-    </div>
-
-
-        <span>
-    
-        <a class href="/2019/01/03/19-Bi-Kip-Ban-Co-The-Dung-Khi-Pham-Sai-Lam-Voi-Git/">19 Bí Kíp Bạn Có Thể Dùng Khi Phạm Sai Lầm Với Git</a>
-    
-
-
-</span>
-      </li>
-    
-      
-      
-      
-      
-      <li class="post-item">
-        
-    <div class="meta">
-        <time datetime="2019-01-03T10:34:40.000Z" itemprop="datePublished">2019-01-03</time>
-    </div>
-
-
-        <span>
-    
-        <a class href="/2019/01/03/Dua-nghich-voi-Docker-trong-5-phut/">ĐÙa Nghịch Với Docker Trong 5 Phút</a>
-    
-
-
-</span>
-      </li>
-    
-  </ul>
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  
   
 
+  <div class="content" itemprop="articleBody">
+    <div id="calendar_wrap">
 </div>
+<script>
+  window.onload = () => {
+    const century = y => Math.floor(y / 100);
+    // hàm tính tháng cho công thức zeller
+    const month = m => m < 3 ? m + 12 : m - 2
+    // hàm tính năm trong thể kỷ
+    const year = (m, y) => (y % 100) - (m < 3 ? 1 : 0)
+    // công thức zeller
+    const _zeller = (day, month, year, century) => ((13 * month + 1) / 5 + year / 4 + century / 4 + day + year - 2 * century) - 1 % 7;
+    const zeller = (d, m, y) => _zeller(d, month(m), year(m, y), century(y))
+    const isLeap = year => year % 4 || (year % 100 === 0 && year % 400) ? 0 : 1;
+    const daysIn = (month, year) => month === 2 ? (28 + isLeap(year)) : 31 - (month - 1) % 7 % 2;
+    const breakFollowWeek = arr => {
+      const len = arr.length,
+        rs = []
+      for (i = 0; i < len; i += 7) {
+        rs.push(`${pad(arr[i])} | ${pad(arr[i + 1])} | ${pad(arr[i + 2])} | ${pad(arr[i + 3])} | ${pad(arr[i + 4])} | ${pad(arr[i + 5])} | ${pad(arr[i + 6])}`)
+      }
+      return rs;
+    }
+    const calendar = (month, year) => {
+      console.log(zeller(1, month, year), month, year);
+
+      var startIndex = Math.trunc(zeller(1, month, year));
+      var endIndex = daysIn(month, year);
+      var result = Array.apply(0, Array(42)).map(_ => 0);
+
+      for (var i = startIndex; i < endIndex + startIndex; i++) {
+        result[i] = i - startIndex + 1;
+      }
+      return breakFollowWeek(result).join('\n--------------------------------\n');
+    }
+    const pad = n => (n < 10 ? '0' : '') + n
+
+    const date = new Date()
+    document.getElementById('calendar_wrap').innerHTML = `<pre>
+              ${pad(date.getMonth() + 1)}/${date.getFullYear()}
+SU | MO | TU | WE | TH | FR | SA | STA
+             ------
+${calendar(date.getMonth() + 1, date.getFullYear())}
+</pre>`
+  }
+</script>
+  </div>
+</article>
 
     </div>
     
@@ -138,11 +143,13 @@
   <script>
     var disqus_shortname = 'https-anph29-github-io';
     
+    var disqus_url = 'https://anph29.github.io/schedule/index.html';
+    
     (function(){
       var dsq = document.createElement('script');
       dsq.type = 'text/javascript';
       dsq.async = true;
-      dsq.src = '//go.disqus.com/count.js';
+      dsq.src = '//go.disqus.com/embed.js';
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
   </script>

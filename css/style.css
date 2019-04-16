@@ -426,8 +426,8 @@
   font-size: 13px;
   border: solid 2px #fff;
 }
-.content td:not(.code,
-.content .gutter) {
+.content td:not(.code),
+.content td:not(.gutter) {
   padding: 9px 8px 0;
   border: solid 1px #fff;
 }

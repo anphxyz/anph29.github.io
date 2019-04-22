@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="Bạn đã quyết định sử dụng Redux làm thư viện quản lý state, bây giờ bạn thực sự đã làm phần khó. quyết định sử dụng thư viện nào mọi thứ khác đều rất dễ dàng và nhanh chóng. theo dõi để tạo một ứng dụ">
+<meta name="keywords" content="react redux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Sử Dụng Redux Cho ứNg Dụng React Trong 10 Phút">
+<meta property="og:url" content="https://anph29.github.io/2019/04/17/Su-dung-Redux-cho-ung-dung-React-trong-10-phut/index.html">
+<meta property="og:site_name" content="Code notes &amp; tips">
+<meta property="og:description" content="Bạn đã quyết định sử dụng Redux làm thư viện quản lý state, bây giờ bạn thực sự đã làm phần khó. quyết định sử dụng thư viện nào mọi thứ khác đều rất dễ dàng và nhanh chóng. theo dõi để tạo một ứng dụ">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-04-17T10:05:18.814Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Sử Dụng Redux Cho ứNg Dụng React Trong 10 Phút">
+<meta name="twitter:description" content="Bạn đã quyết định sử dụng Redux làm thư viện quản lý state, bây giờ bạn thực sự đã làm phần khó. quyết định sử dụng thư viện nào mọi thứ khác đều rất dễ dàng và nhanh chóng. theo dõi để tạo một ứng dụ">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="https://www.gravatar.com/avatar/91919cbf0f8f0fdf74b963ceae6c24db?s=16">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="https://www.gravatar.com/avatar/91919cbf0f8f0fdf74b963ceae6c24db?s=192" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="https://www.gravatar.com/avatar/91919cbf0f8f0fdf74b963ceae6c24db?s=180">
+          
+        
+    
+    <!-- title -->
+    <title>Sử Dụng Redux Cho ứNg Dụng React Trong 10 Phút</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- rss -->
+    
+    
+</head>
+
+<body class="max-width mx-auto px3">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/about/">about</a></li>
+         
+          <li><a href="/categories/javascript">javascript</a></li>
+         
+          <li><a href="/categories/python">python</a></li>
+         
+          <li><a href="/categories/docker">docker</a></li>
+         
+          <li><a href="/categories/algorithm">algorithm</a></li>
+         
+          <li><a href="/categories/git">git</a></li>
+         
+          <li><a href="/categories/nocode">nocode</a></li>
+         
+          <li><a href="/categories/regex">regular expression</a></li>
+        
+      </ul>
+    </span>
+    <br>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2019/04/17/Hieu-thau-dan-ong-va-dan-ba/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2019/04/16/Regex-Viet-Nam-mobile-number/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://anph29.github.io/2019/04/17/Su-dung-Redux-cho-ung-dung-React-trong-10-phut/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://anph29.github.io/2019/04/17/Su-dung-Redux-cho-ung-dung-React-trong-10-phut/&text=Sử Dụng Redux Cho ứNg Dụng React Trong 10 Phút"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://anph29.github.io/2019/04/17/Su-dung-Redux-cho-ung-dung-React-trong-10-phut/&title=Sử Dụng Redux Cho ứNg Dụng React Trong 10 Phút"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://anph29.github.io/2019/04/17/Su-dung-Redux-cho-ung-dung-React-trong-10-phut/&is_video=false&description=Sử Dụng Redux Cho ứNg Dụng React Trong 10 Phút"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Sử Dụng Redux Cho ứNg Dụng React Trong 10 Phút&body=Check out this article: https://anph29.github.io/2019/04/17/Su-dung-Redux-cho-ung-dung-React-trong-10-phut/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://anph29.github.io/2019/04/17/Su-dung-Redux-cho-ung-dung-React-trong-10-phut/&title=Sử Dụng Redux Cho ứNg Dụng React Trong 10 Phút"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://anph29.github.io/2019/04/17/Su-dung-Redux-cho-ung-dung-React-trong-10-phut/&title=Sử Dụng Redux Cho ứNg Dụng React Trong 10 Phút"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://anph29.github.io/2019/04/17/Su-dung-Redux-cho-ung-dung-React-trong-10-phut/&title=Sử Dụng Redux Cho ứNg Dụng React Trong 10 Phút"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://anph29.github.io/2019/04/17/Su-dung-Redux-cho-ung-dung-React-trong-10-phut/&title=Sử Dụng Redux Cho ứNg Dụng React Trong 10 Phút"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://anph29.github.io/2019/04/17/Su-dung-Redux-cho-ung-dung-React-trong-10-phut/&name=Sử Dụng Redux Cho ứNg Dụng React Trong 10 Phút&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Y-tuong-dang-sau-Redux"><span class="toc-number">1.</span> <span class="toc-text">Ý tưởng đằng sau Redux</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index my4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Sử Dụng Redux Cho ứNg Dụng React Trong 10 Phút
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Code notes & tips</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2019-04-17T08:09:00.000Z" itemprop="datePublished">2019-04-17</time>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/react-redux/">react redux</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <p>Bạn đã quyết định sử dụng Redux làm thư viện quản lý state, bây giờ bạn thực sự đã làm phần khó. quyết định sử dụng thư viện nào mọi thứ khác đều rất dễ dàng và nhanh chóng. theo dõi để tạo một ứng dụng việc cần làm với redux chỉ trong 5 phút.</p>
+<h2 id="Y-tuong-dang-sau-Redux"><a href="#Y-tuong-dang-sau-Redux" class="headerlink" title="Ý tưởng đằng sau Redux"></a>Ý tưởng đằng sau Redux</h2><p>Bạn có 3 thành phần chính: <code>store</code>, <code>reducer</code>, và <code>actions</code>.</p>
+<p>Như Redux nói,</p>
+<p><code>Store</code> holds the whole state [tree] of your application. The only way to change the state inside it is to dispatch an action on it.</p>
+<p><code>Actions</code> are payloads of information that send data from your application to your store. They are the only source of information for the store.</p>
+<p>we will define two actions, <code>createItem</code> and <code>deleteItem</code>.</p>
+<p><code>Reducers</code> specify how the application’s state changes in response to actions sent to the store. Remember that actions only describe what happened, but don’t describe how the application’s state changes.</p>
+<p>we will create one reducer just like a table in sql db. there can be may according to your application.</p>
+<p>Tutorial<br>Step-1<br>Create a new react app using CRA(create-react-app).<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create-react-app todo-app</span><br></pre></td></tr></table></figure></p>
+<p>Step-2<br>Install dependencies<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install lodash @material-ui/core @material-ui/icons react-redux redux redux-logger</span><br></pre></td></tr></table></figure></p>
+<p>Step-3<br>If you want to learn an efficient way to store your files, use ducks file structure. But for simplicity, we will be using simple file structure.</p>
+<p>Create a new folder inside src named “modules”</p>
+<p>create three files inside the folder: action.js, reducer.js, store.js</p>
+<p>actions are simple objects with one mandatory property type. you dispatch actions from your component to send data to the state store.</p>
+<p>action.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// types of action</span></span><br><span class="line"><span class="keyword">const</span> Types = &#123;</span><br><span class="line">  CREATE_ITEM: <span class="string">"CREATE_ITEM"</span>,</span><br><span class="line">  DELETE_ITEM: <span class="string">"DELETE_ITEM"</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// actions</span></span><br><span class="line"><span class="keyword">const</span> createItem = <span class="function"><span class="params">task</span> =&gt;</span> (&#123;</span><br><span class="line">  type: Types.CREATE_ITEM,</span><br><span class="line">  payload: task</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> deleteItem = <span class="function"><span class="params">id</span> =&gt;</span> (&#123;</span><br><span class="line">  type: Types.DELETE_ITEM,</span><br><span class="line">  payload: id</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  createItem,</span><br><span class="line">  deleteItem,</span><br><span class="line">  Types</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>Ideally, you should create another file for your action types.</p>
+<p>reducer.js<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> ACTIONS <span class="keyword">from</span> <span class="string">"./action"</span>;</span><br><span class="line"><span class="keyword">import</span> _ <span class="keyword">from</span> <span class="string">"lodash"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> defaultState = &#123;</span><br><span class="line">  items: []</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> todoReducer = <span class="function">(<span class="params">state = defaultState, action</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">switch</span> (action.type) &#123;</span><br><span class="line">    <span class="keyword">case</span> ACTIONS.Types.CREATE_ITEM: &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(action);</span><br><span class="line"></span><br><span class="line">      <span class="keyword">let</span> item = action.payload;</span><br><span class="line">      <span class="keyword">let</span> newItem = &#123; <span class="attr">id</span>: state.items.length + <span class="number">1</span>, <span class="attr">description</span>: item &#125;;</span><br><span class="line">      <span class="keyword">let</span> newState = _.cloneDeep(state);</span><br><span class="line">      newState.items.push(newItem);</span><br><span class="line">      <span class="keyword">return</span> newState;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">case</span> ACTIONS.Types.DELETE_ITEM: &#123;</span><br><span class="line">      <span class="keyword">let</span> newState = _.cloneDeep(state);</span><br><span class="line">      <span class="keyword">let</span> index = _.findIndex(newState.items, &#123; <span class="attr">id</span>: action.payload &#125;);</span><br><span class="line">      newState.items.splice(index, <span class="number">1</span>);</span><br><span class="line">      <span class="keyword">return</span> newState;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">      <span class="keyword">return</span> state;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> todoReducer;</span><br></pre></td></tr></table></figure></p>
+<p>store.js<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createStore, applyMiddleware &#125; <span class="keyword">from</span> <span class="string">"redux"</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Logger with default options</span></span><br><span class="line"><span class="keyword">import</span> logger <span class="keyword">from</span> <span class="string">"redux-logger"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> reducer <span class="keyword">from</span> <span class="string">"./reducer"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> <span class="title">configureStore</span>(<span class="params">initialState</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> store = createStore(reducer, initialState, applyMiddleware(logger));</span><br><span class="line">  <span class="keyword">return</span> store;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Step-4<br>create a new todo.js in a new folder inside src named “pages”. this will contain our todo list component. this example is focused on Redux so we won’t try to create component/containers. we will have our entire app in this file only.</p>
+<p>Create the UI with a form and a list to show the tasks.</p>
+<p>todo.js<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; Component &#125; <span class="keyword">from</span> <span class="string">"react"</span>;</span><br><span class="line"><span class="keyword">import</span> &#123;</span><br><span class="line">  withStyles,</span><br><span class="line">  List,</span><br><span class="line">  ListItem,</span><br><span class="line">  ListItemSecondaryAction,</span><br><span class="line">  ListItemText,</span><br><span class="line">  IconButton,</span><br><span class="line">  Grid,</span><br><span class="line">  TextField,</span><br><span class="line">  Button,</span><br><span class="line">  FormControl</span><br><span class="line">&#125; <span class="keyword">from</span> <span class="string">"@material-ui/core"</span>;</span><br><span class="line"><span class="keyword">import</span> DeleteIcon <span class="keyword">from</span> <span class="string">"@material-ui/icons/Delete"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> styles = <span class="function"><span class="params">theme</span> =&gt;</span> (&#123;</span><br><span class="line">  root: &#123;</span><br><span class="line">    flexGrow: <span class="number">1</span>,</span><br><span class="line">    maxWidth: <span class="number">752</span></span><br><span class="line">  &#125;,</span><br><span class="line">  demo: &#123;</span><br><span class="line">    backgroundColor: theme.palette.background.paper</span><br><span class="line">  &#125;,</span><br><span class="line">  title: &#123;</span><br><span class="line">    margin: <span class="string">`<span class="subst">$&#123;theme.spacing.unit * <span class="number">4</span>&#125;</span>px 0 <span class="subst">$&#123;theme.spacing.unit * <span class="number">2</span>&#125;</span>px`</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ToDO</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  state = &#123;&#125;;</span><br><span class="line"></span><br><span class="line">  generate = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.props.items.map(<span class="function"><span class="params">item</span> =&gt;</span> (</span><br><span class="line">      &lt;ListItem key=&#123;item.id&#125;&gt;</span><br><span class="line">        &lt;ListItemText primary=&#123;item.description&#125; /&gt;</span><br><span class="line">        &lt;ListItemSecondaryAction&gt;</span><br><span class="line">          &lt;IconButton</span><br><span class="line">            aria-label=<span class="string">"Delete"</span></span><br><span class="line">            onClick=&#123;<span class="keyword">this</span>.handleDelete&#125;</span><br><span class="line">            value=&#123;item.id&#125;</span><br><span class="line">          &gt;</span><br><span class="line">            &lt;DeleteIcon /&gt;</span><br><span class="line">          &lt;<span class="regexp">/IconButton&gt;</span></span><br><span class="line"><span class="regexp">        &lt;/</span>ListItemSecondaryAction&gt;</span><br><span class="line">      &lt;<span class="regexp">/ListItem&gt;</span></span><br><span class="line"><span class="regexp">    ));</span></span><br><span class="line"><span class="regexp">  &#125;;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">  handleSubmit = event =&gt; &#123;</span></span><br><span class="line"><span class="regexp">    /</span><span class="regexp">/ console.log(this.state.item);</span></span><br><span class="line"><span class="regexp">    this.setState(&#123; item: "" &#125;);</span></span><br><span class="line"><span class="regexp">    if (this.state.item !== "") &#123;</span></span><br><span class="line"><span class="regexp">      /</span><span class="regexp">/ add the task to store</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">    event.preventDefault();</span></span><br><span class="line"><span class="regexp">  &#125;;</span></span><br><span class="line"><span class="regexp">  handleDelete = event =&gt; &#123;</span></span><br><span class="line"><span class="regexp">    /</span><span class="regexp">/delete the task from the store</span></span><br><span class="line"><span class="regexp">    </span></span><br><span class="line"><span class="regexp">  &#125;;</span></span><br><span class="line"><span class="regexp">  handleChange = event =&gt; &#123;</span></span><br><span class="line"><span class="regexp">    this.setState(&#123;</span></span><br><span class="line"><span class="regexp">      [event.target.name]: event.target.value</span></span><br><span class="line"><span class="regexp">    &#125;);</span></span><br><span class="line"><span class="regexp">  &#125;;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">  render() &#123;</span></span><br><span class="line"><span class="regexp">    const &#123; classes &#125; = this.props;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">    return (</span></span><br><span class="line"><span class="regexp">      &lt;div&gt;</span></span><br><span class="line"><span class="regexp">        &lt;div&gt;</span></span><br><span class="line"><span class="regexp">          &lt;form noValidate autoComplete="off" onSubmit=&#123;this.handleSubmit&#125;&gt;</span></span><br><span class="line"><span class="regexp">            &lt;FormControl&gt;</span></span><br><span class="line"><span class="regexp">              &lt;TextField</span></span><br><span class="line"><span class="regexp">                label="New Task"</span></span><br><span class="line"><span class="regexp">                id="margin-dense"</span></span><br><span class="line"><span class="regexp">                value=&#123;this.state.item&#125;</span></span><br><span class="line"><span class="regexp">                className=&#123;classes.textField&#125;</span></span><br><span class="line"><span class="regexp">                margin="dense"</span></span><br><span class="line"><span class="regexp">                name="item"</span></span><br><span class="line"><span class="regexp">                onChange=&#123;this.handleChange&#125;</span></span><br><span class="line"><span class="regexp">              /</span>&gt;</span><br><span class="line">            &lt;<span class="regexp">/FormControl&gt;</span></span><br><span class="line"><span class="regexp">            &lt;FormControl&gt;</span></span><br><span class="line"><span class="regexp">              &lt;Button&gt;Add&lt;/</span>Button&gt;</span><br><span class="line">            &lt;<span class="regexp">/FormControl&gt;</span></span><br><span class="line"><span class="regexp">          &lt;/</span>form&gt;</span><br><span class="line">        &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">        &lt;div&gt;</span></span><br><span class="line"><span class="regexp">          &lt;Grid item container justify="space-evenly" alignItems="center"&gt;</span></span><br><span class="line"><span class="regexp">            &lt;div className=&#123;classes.demo&#125;&gt;</span></span><br><span class="line"><span class="regexp">              &lt;List dense=&#123;false&#125;&gt;&#123;this.generate()&#125;&lt;/</span>List&gt;</span><br><span class="line">            &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">          &lt;/</span>Grid&gt;</span><br><span class="line">        &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">      &lt;/</span>div&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> withStyles(styles)(ToDO);</span><br></pre></td></tr></table></figure></p>
+<p>Step-5<br>It’s time to connect our todo component with the redux store.</p>
+<p>Open your App.js and add redux provider so all of the children can access the store.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; Component &#125; <span class="keyword">from</span> <span class="string">"react"</span>;</span><br><span class="line"><span class="keyword">import</span> logo <span class="keyword">from</span> <span class="string">"./logo.svg"</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">"./App.css"</span>;</span><br><span class="line"><span class="keyword">import</span> ToDO <span class="keyword">from</span> <span class="string">"./pages/todo"</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; Provider <span class="keyword">as</span> ReduxProvider &#125; <span class="keyword">from</span> <span class="string">"react-redux"</span>;</span><br><span class="line"><span class="keyword">import</span> configureStore <span class="keyword">from</span> <span class="string">"./modules/store"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> reduxStore = configureStore(<span class="built_in">window</span>.REDUX_INITIAL_DATA);</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;ReduxProvider store=&#123;reduxStore&#125;&gt;</span><br><span class="line">        &lt;div className=<span class="string">"App"</span>&gt;</span><br><span class="line">          &lt;header className=<span class="string">"App-header"</span>&gt;</span><br><span class="line">            &lt;img src=&#123;logo&#125; className=<span class="string">"App-logo"</span> alt=<span class="string">"logo"</span> /&gt;</span><br><span class="line">            &lt;h1 className=<span class="string">"App-title"</span>&gt;ToDo Redux app&lt;<span class="regexp">/h1&gt;</span></span><br><span class="line"><span class="regexp">          &lt;/</span>header&gt;</span><br><span class="line">          &lt;ToDO /&gt;</span><br><span class="line">        &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">      &lt;/</span>ReduxProvider&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> App;</span><br></pre></td></tr></table></figure>
+<p>Inside your todo.js, connect it with the store using connect component from react-redux. add these at the end of the file in todo.js.</p>
+<p>Now the items from store will be available in component’s props. Also the other two functions(actions) will be available in props.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> ACTIONS <span class="keyword">from</span> <span class="string">"../modules/action"</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; connect &#125; <span class="keyword">from</span> <span class="string">"react-redux"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> mapStateToProps = <span class="function"><span class="params">state</span> =&gt;</span> (&#123;</span><br><span class="line">  items: state.items</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> mapDispatchToProps = <span class="function"><span class="params">dispatch</span> =&gt;</span> (&#123;</span><br><span class="line">  createItem: <span class="function"><span class="params">item</span> =&gt;</span> dispatch(ACTIONS.createItem(item)),</span><br><span class="line">  deleteItem: <span class="function"><span class="params">id</span> =&gt;</span> dispatch(ACTIONS.deleteItem(id))</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> connect(</span><br><span class="line">  mapStateToProps,</span><br><span class="line">  mapDispatchToProps</span><br><span class="line">)(withStyles(styles)(ToDO));</span><br></pre></td></tr></table></figure>
+<p><strong>end part todo.js</strong><br>Lastly, call createItem and deleteItem inside of handleSubmit and handleDelete respectively.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">handleSubmit = <span class="function"><span class="params">event</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// console.log(this.state.item);</span></span><br><span class="line">  <span class="keyword">this</span>.setState(&#123; <span class="attr">item</span>: <span class="string">""</span> &#125;);</span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">this</span>.state.item !== <span class="string">""</span>) &#123;</span><br><span class="line">    <span class="comment">// add the item to the store</span></span><br><span class="line">    <span class="keyword">this</span>.props.createItem(<span class="keyword">this</span>.state.item);</span><br><span class="line">  &#125;</span><br><span class="line">  event.preventDefault();</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">handleDelete = <span class="function"><span class="params">event</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// delete the item from the store</span></span><br><span class="line">  <span class="keyword">this</span>.props.deleteItem(event.target.value);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>If you want the whole app code then it is available at this <a href="https://github.com/drex44/todo-redux-app" target="_blank" rel="noopener">github repository</a>.</p>
+<p>Conclusion</p>
+<p>And that’s it! Did this work for you? Please leave any questions and comments below!</p>
+<p>Thank you for reading!</p>
+<p>Nguồn: <a href="https://medium.com/wineofbits/use-redux-in-your-react-app-in-just-10-minutes-8da6e9f043c5" target="_blank" rel="noopener">https://medium.com/wineofbits/use-redux-in-your-react-app-in-just-10-minutes-8da6e9f043c5</a></p>
+<p>dear Mr. Dhanraj Acharya, can I translate your article in to Vietnamese? I will keep your reference URL! Thankyou!</p>
+
+  </div>
+</article>
+
+
+
+    </div>
+    
+      <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/about/">about</a></li>
+         
+          <li><a href="/categories/javascript">javascript</a></li>
+         
+          <li><a href="/categories/python">python</a></li>
+         
+          <li><a href="/categories/docker">docker</a></li>
+         
+          <li><a href="/categories/algorithm">algorithm</a></li>
+         
+          <li><a href="/categories/git">git</a></li>
+         
+          <li><a href="/categories/nocode">nocode</a></li>
+         
+          <li><a href="/categories/regex">regular expression</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Y-tuong-dang-sau-Redux"><span class="toc-number">1.</span> <span class="toc-text">Ý tưởng đằng sau Redux</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://anph29.github.io/2019/04/17/Su-dung-Redux-cho-ung-dung-React-trong-10-phut/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://anph29.github.io/2019/04/17/Su-dung-Redux-cho-ung-dung-React-trong-10-phut/&text=Sử Dụng Redux Cho ứNg Dụng React Trong 10 Phút"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://anph29.github.io/2019/04/17/Su-dung-Redux-cho-ung-dung-React-trong-10-phut/&title=Sử Dụng Redux Cho ứNg Dụng React Trong 10 Phút"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://anph29.github.io/2019/04/17/Su-dung-Redux-cho-ung-dung-React-trong-10-phut/&is_video=false&description=Sử Dụng Redux Cho ứNg Dụng React Trong 10 Phút"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Sử Dụng Redux Cho ứNg Dụng React Trong 10 Phút&body=Check out this article: https://anph29.github.io/2019/04/17/Su-dung-Redux-cho-ung-dung-React-trong-10-phut/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://anph29.github.io/2019/04/17/Su-dung-Redux-cho-ung-dung-React-trong-10-phut/&title=Sử Dụng Redux Cho ứNg Dụng React Trong 10 Phút"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://anph29.github.io/2019/04/17/Su-dung-Redux-cho-ung-dung-React-trong-10-phut/&title=Sử Dụng Redux Cho ứNg Dụng React Trong 10 Phút"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://anph29.github.io/2019/04/17/Su-dung-Redux-cho-ung-dung-React-trong-10-phut/&title=Sử Dụng Redux Cho ứNg Dụng React Trong 10 Phút"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://anph29.github.io/2019/04/17/Su-dung-Redux-cho-ung-dung-React-trong-10-phut/&title=Sử Dụng Redux Cho ứNg Dụng React Trong 10 Phút"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://anph29.github.io/2019/04/17/Su-dung-Redux-cho-ung-dung-React-trong-10-phut/&name=Sử Dụng Redux Cho ứNg Dụng React Trong 10 Phút&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+    
+      
+  <script>
+    var disqus_shortname = 'https-anph29-github-io';
+    
+    var disqus_url = 'https://anph29.github.io/2019/04/17/Su-dung-Redux-cho-ung-dung-React-trong-10-phut/';
+    
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//go.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  
+<footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2019 Anph
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/about/">about</a></li>
+         
+          <li><a href="/categories/javascript">javascript</a></li>
+         
+          <li><a href="/categories/python">python</a></li>
+         
+          <li><a href="/categories/docker">docker</a></li>
+         
+          <li><a href="/categories/algorithm">algorithm</a></li>
+         
+          <li><a href="/categories/git">git</a></li>
+         
+          <li><a href="/categories/nocode">nocode</a></li>
+         
+          <li><a href="/categories/regex">regular expression</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+<div id="disqus_thread"></div>
+
+</body>
+</html>
+<!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/fontawesome-all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+<!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Disqus Comments -->
+
+

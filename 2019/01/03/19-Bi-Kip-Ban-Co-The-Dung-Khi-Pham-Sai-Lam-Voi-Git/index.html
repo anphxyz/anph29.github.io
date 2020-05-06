@@ -1,131 +1,167 @@
-
 <!DOCTYPE html>
-<html lang class="loading">
+<html>
 <head><meta name="generator" content="Hexo 3.8.0">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>19 Bí Kíp Bạn Có Thể Dùng Khi Phạm Sai Lầm Với Git - Code notes &amp; tips</title>
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="google" content="notranslate">
-    <meta name="keywords" content="TriDiamond Obsidian,"> 
-    <meta name="description" content="19 Bí Kíp Bạn Có Thể Dùng Khi Phạm Sai Lầm Với GitNhững nội dung sau rất nguy hiểm, nếu bạn làm the,"> 
-    <meta name="author" content="Anph"> 
-    <link rel="alternative" href="atom.xml" title="Code notes &amp; tips" type="application/atom+xml"> 
-    <link rel="icon" href="/img/favicon.png"> 
-    <link href="https://fonts.loli.net/css?family=Roboto+Mono|Rubik&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_nzgqgvnmkjb.css">
-    <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.7.2/animate.min.css">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
-    <link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/codemirror.min.css">
-    <link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/theme/dracula.css">
-    <link rel="stylesheet" href="/css/obsidian.css">
-    <link rel="stylesheet" href="/css/ball-atom.min.css">
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="19 Bí Kíp Bạn Có Thể Dùng Khi Phạm Sai Lầm Với GitNhững nội dung sau rất nguy hiểm, nếu bạn làm theo, xin hãy chịu trách nhiệm về bản thân mình. Nếu có gì sai sót, mong bạn hãy chỉ ra để tôi được biết">
+<meta name="keywords" content="git">
+<meta property="og:type" content="article">
+<meta property="og:title" content="19 Bí Kíp Bạn Có Thể Dùng Khi Phạm Sai Lầm Với Git">
+<meta property="og:url" content="https://anph29.github.io/2019/01/03/19-Bi-Kip-Ban-Co-The-Dung-Khi-Pham-Sai-Lam-Voi-Git/index.html">
+<meta property="og:site_name" content="Code notes &amp; tips">
+<meta property="og:description" content="19 Bí Kíp Bạn Có Thể Dùng Khi Phạm Sai Lầm Với GitNhững nội dung sau rất nguy hiểm, nếu bạn làm theo, xin hãy chịu trách nhiệm về bản thân mình. Nếu có gì sai sót, mong bạn hãy chỉ ra để tôi được biết">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-06-06T03:01:49.790Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="19 Bí Kíp Bạn Có Thể Dùng Khi Phạm Sai Lầm Với Git">
+<meta name="twitter:description" content="19 Bí Kíp Bạn Có Thể Dùng Khi Phạm Sai Lầm Với GitNhững nội dung sau rất nguy hiểm, nếu bạn làm theo, xin hãy chịu trách nhiệm về bản thân mình. Nếu có gì sai sót, mong bạn hãy chỉ ra để tôi được biết">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>19 Bí Kíp Bạn Có Thể Dùng Khi Phạm Sai Lầm Với Git</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- persian styles -->
+    
+      <link rel="stylesheet" href="/css/rtl.css">
+    
+    <!-- rss -->
+    
+    
 </head>
-</html>
 
-<body class="loading">
-    <div class="loader">
-        <div class="la-ball-atom la-2x">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Trang chủ</a></li>
+         
+          <li><a href="/about/">Giới thiệu</a></li>
+         
+          <li><a href="/archives/">Bài viết</a></li>
+         
+          <li><a href="/categories/javascript/">javascript</a></li>
+         
+          <li><a href="/categories/css/">css</a></li>
+         
+          <li><a href="/categories/python/">python</a></li>
+         
+          <li><a href="/categories/regex/">regex</a></li>
+         
+          <li><a href="/categories/nocode/">nocode</a></li>
+        
+      </ul>
+    </span>
+    <br>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2019/03/14/sum-big-number-from-string/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2019/01/03/Dua-nghich-voi-Docker-trong-5-phut/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Bài trước</span>
+      <span id="i-next" class="info" style="display:none;">Bài tiếp theo</span>
+      <span id="i-top" class="info" style="display:none;">Về đầu trang</span>
+      <span id="i-share" class="info" style="display:none;">Chia sẻ bài viết</span>
+    </span>
+    <br>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://anph29.github.io/2019/01/03/19-Bi-Kip-Ban-Co-The-Dung-Khi-Pham-Sai-Lam-Voi-Git/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://anph29.github.io/2019/01/03/19-Bi-Kip-Ban-Co-The-Dung-Khi-Pham-Sai-Lam-Voi-Git/&text=19 Bí Kíp Bạn Có Thể Dùng Khi Phạm Sai Lầm Với Git"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://anph29.github.io/2019/01/03/19-Bi-Kip-Ban-Co-The-Dung-Khi-Pham-Sai-Lam-Voi-Git/&title=19 Bí Kíp Bạn Có Thể Dùng Khi Phạm Sai Lầm Với Git"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://anph29.github.io/2019/01/03/19-Bi-Kip-Ban-Co-The-Dung-Khi-Pham-Sai-Lam-Voi-Git/&is_video=false&description=19 Bí Kíp Bạn Có Thể Dùng Khi Phạm Sai Lầm Với Git"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=19 Bí Kíp Bạn Có Thể Dùng Khi Phạm Sai Lầm Với Git&body=Check out this article: https://anph29.github.io/2019/01/03/19-Bi-Kip-Ban-Co-The-Dung-Khi-Pham-Sai-Lam-Voi-Git/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://anph29.github.io/2019/01/03/19-Bi-Kip-Ban-Co-The-Dung-Khi-Pham-Sai-Lam-Voi-Git/&title=19 Bí Kíp Bạn Có Thể Dùng Khi Phạm Sai Lầm Với Git"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://anph29.github.io/2019/01/03/19-Bi-Kip-Ban-Co-The-Dung-Khi-Pham-Sai-Lam-Voi-Git/&title=19 Bí Kíp Bạn Có Thể Dùng Khi Phạm Sai Lầm Với Git"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://anph29.github.io/2019/01/03/19-Bi-Kip-Ban-Co-The-Dung-Khi-Pham-Sai-Lam-Voi-Git/&title=19 Bí Kíp Bạn Có Thể Dùng Khi Phạm Sai Lầm Với Git"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://anph29.github.io/2019/01/03/19-Bi-Kip-Ban-Co-The-Dung-Khi-Pham-Sai-Lam-Voi-Git/&title=19 Bí Kíp Bạn Có Thể Dùng Khi Phạm Sai Lầm Với Git"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://anph29.github.io/2019/01/03/19-Bi-Kip-Ban-Co-The-Dung-Khi-Pham-Sai-Lam-Voi-Git/&name=19 Bí Kíp Bạn Có Thể Dùng Khi Phạm Sai Lầm Với Git&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://anph29.github.io/2019/01/03/19-Bi-Kip-Ban-Co-The-Dung-Khi-Pham-Sai-Lam-Voi-Git/&t=19 Bí Kíp Bạn Có Thể Dùng Khi Phạm Sai Lầm Với Git"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
     </div>
-    <span id="config-title" style="display:none">Code notes &amp; tips</span>
-    <div id="loader"></div>
-    <div id="single">
-    <div class="scrollbar gradient-bg-rev"></div>
-<div id="top" style="display: block;">
-    <div class="bar" style="width: 0;"></div>
-    <div class="navigation animated fadeIn fast delay-1s">
-        <img id="home-icon" class="icon-home" src="/img/favicon.png" alt data-url="https://anph29.github.io">
-        <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
-        <h3 class="subtitle">19 Bí Kíp Bạn Có Thể Dùng Khi Phạm Sai Lầm Với Git</h3>
-        <div class="social">
-            <!--        <div class="like-icon">-->
-            <!--            <a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
-            <!--        </div>-->
-            <div>
-                <div class="share">
-                    
-                        <a href="javascript:;" class="iconfont icon-share1"></a>
-                        <div class="share-component-cc" data-disabled="facebook,douban,linkedin,diandian,tencent,google"></div>
-                    
-                </div>
-            </div>
-        </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#19-Bi-Kip-Ban-Co-The-Dung-Khi-Pham-Sai-Lam-Voi-Git"><span class="toc-number">1.</span> <span class="toc-text">19 Bí Kíp Bạn Có Thể Dùng Khi Phạm Sai Lầm Với Git</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Su-co-1：-Khi-trong-commit-message-lo-co-nhung-tu-cam-ki-khien-ban-chi-muon-chet-di-cho-xong"><span class="toc-number">1.1.</span> <span class="toc-text">Sự cố 1： Khi trong commit message lỡ có những từ cấm kị khiến bạn chỉ muốn chết đi cho xong</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Su-co-2：-Khi-lo-tay-commit-duoi-ten-cua-mot-user-khac"><span class="toc-number">1.2.</span> <span class="toc-text">Sự cố 2： Khi lỡ tay commit dưới tên của môt user khác</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Su-co-３：-Khi-da-lo-tay-commit-mot-so-file-thua-nhung-sau-khi-nghi-lai-thi-nen-ignore-thi-hon"><span class="toc-number">1.3.</span> <span class="toc-text">Sự cố ３： Khi đã lỡ tay commit một số file thừa nhưng sau khi nghĩ lại thì nên ignore thì hơn</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Su-co-4：-Khi-ma-ten-branh-ban-dat-qua-la-“chuoi”"><span class="toc-number">1.4.</span> <span class="toc-text">Sự cố 4： Khi mà tên branh bạn đặt quá là “chuối”</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Su-co-5：-Khi-trong-phut-nong-noi-ban-lo-commit-va-gio-muon-commit-do-bien-mat"><span class="toc-number">1.5.</span> <span class="toc-text">Sự cố 5： Khi trong phút nông nổi bạn lỡ commit và giờ muốn commit đó biến mất</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Su-co-6：-Khi-muon-tong-hop-nhung-commit-vun-vat-truoc-day-thanh-mot-commit"><span class="toc-number">1.6.</span> <span class="toc-text">Sự cố 6： Khi muốn tổng hợp những commit vụn vặt trước đây thành một commit</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Su-co-７：-Khi-ban-muon-chia-commit-to-thanh-nhung-commit-nho-hon-mot-cach-thong-minh"><span class="toc-number">1.7.</span> <span class="toc-text">Sự cố ７： Khi bạn muốn chia commit to thành những commit nhỏ hơn một cách thông minh</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Su-co-８：-Khi-lo-tay-commit-nham-sang-mot-branch-khac"><span class="toc-number">1.8.</span> <span class="toc-text">Sự cố ８： Khi lỡ tay commit nhầm sang một branch khác</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Su-co-９：-Khi-muon-xoa-hoan-toan-cac-file-khong-can-thiet"><span class="toc-number">1.9.</span> <span class="toc-text">Sự cố ９： Khi muốn xoá hoàn toàn các file không cần thiết</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Su-co-10：-Khi-tam-thoi-can-tam-dung-cong-viec-hien-tai-va-chuyen-sang-mot-branch-khac"><span class="toc-number">1.10.</span> <span class="toc-text">Sự cố 10： Khi tạm thời cần tạm dừng công việc hiện tại và chuyển sang một branch khác</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Su-co-11：Khi-lo-tay-xoa-mat-mot-commit-cuc-ki-cuc-ki-quan-trong"><span class="toc-number">1.11.</span> <span class="toc-text">Sự cố 11：Khi lỡ tay xoá mất một commit cực kì cực kì quan trọng</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Su-co-12：-Khi-lo-tay-xoa-mat-branch-va-muon-lay-lai"><span class="toc-number">1.12.</span> <span class="toc-text">Sự cố 12： Khi lỡ tay xoá mất branch và muốn lấy lại</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Su-co-13-Khi-muon-thay-doi-mot-phan-noi-dung-commit"><span class="toc-number">1.13.</span> <span class="toc-text">Sự cố 13: Khi muốn thay đổi một phần nội dung commit</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Su-co-14-Khi-co-conflict-trong-qua-trinh-rebase"><span class="toc-number">1.14.</span> <span class="toc-text">Sự cố 14: Khi có conflict trong quá trình rebase</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Su-co-15-Khi-da-merge-nhung-lai-muon-tro-lai-nhu-luc-truoc"><span class="toc-number">1.15.</span> <span class="toc-text">Sự cố 15: Khi đã merge nhưng lại muốn trở lại như lúc trước</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#O-tren-Remote"><span class="toc-number">2.</span> <span class="toc-text">Ở trên Remote</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Su-co-16-Khi-pull-tu-remote-ve-thi-co-qua-nhieu-conflict-nen-tam-thoi-muon-tro-lai-nhu-cu"><span class="toc-number">2.1.</span> <span class="toc-text">Sự cố 16: Khi pull từ remote về thì có quá nhiều conflict nên tạm thời muốn trở lại như cũ</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Su-co-17-Lo-tay-push-force-len-master-tren-remote"><span class="toc-number">2.2.</span> <span class="toc-text">Sự cố 17: Lỡ tay push force lên master trên remote</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Su-co-18-Sau-khi-release-phat-hien-thay-co-bug-va-muon-tro-ve-nhu-cu"><span class="toc-number">2.3.</span> <span class="toc-text">Sự cố 18: Sau khi release phát hiện thấy có bug và muốn trở về như cũ</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Su-co-19：Khi-sau-khi-chuyen-lai-va-da-commit-them-mot-so-commit-moi-nhung-khong-the-merge-lai-duoc"><span class="toc-number">2.4.</span> <span class="toc-text">Sự cố 19：Khi sau khi chuyển lại và đã commit thêm một số commit mới nhưng không thể merge lại được</span></a></li></ol></li></ol>
     </div>
+  </span>
 </div>
 
-    <div class="section">
-        <div class="article-header-wrapper">
-    <div class="article-header">
-        <div class="article-cover animated fadeIn" style="
-            animation-delay: 600ms;
-            animation-duration: 1.2s;
-            background-image: 
-                radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
-                url(/img/cover.jpg) ">
-        </div>
-        <div class="else">
-            <p class="animated fadeInDown">
-                
-                <a href="/categories/git"><b>「
-                    </b>GIT<b> 」</b></a>
-                
-                January 03, 2019
-            </p>
-            <h3 class="post-title animated fadeInDown"><a href="/2019/01/03/19-Bi-Kip-Ban-Co-The-Dung-Khi-Pham-Sai-Lam-Voi-Git/" title="19 Bí Kíp Bạn Có Thể Dùng Khi Phạm Sai Lầm Với Git">19 Bí Kíp Bạn Có Thể Dùng Khi Phạm Sai Lầm Với Git</a>
-            </h3>
-            
-            <p class="post-count animated fadeInDown">
-                
-                <span>
-                    <b class="iconfont icon-text2"></b> <i>Words count</i>
-                    46k
-                </span>
-                
-                
-                <span>
-                    <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
-                    42 mins.
-                </span>
-                
-                
-                
-                <span id="busuanzi_container_page_pv">
-                    <b class="iconfont icon-read"></b> <i>Read count</i>
-                    <span id="busuanzi_value_page_pv">0</span>
-                </span>
-                
-            </p>
-            
-            
-            <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/git/">git</a></li></ul>
-            
-        </div>
-    </div>
-</div>
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        19 Bí Kíp Bạn Có Thể Dùng Khi Phạm Sai Lầm Với Git
+    </h1>
 
-<div class="screen-gradient-after">
-    <div class="screen-gradient-content">
-        <div class="screen-gradient-content-inside">
-            <div class="bold-underline-links screen-gradient-sponsor">
-                <p>
-                    <span class="animated fadeIn delay-1s"></span>
-                </p>
-            </div>
-        </div>
-    </div>
-</div>
 
-<div class="article">
-    <div class="main">
-        <div class="content markdown animated fadeIn">
-            <h1 id="19-Bi-Kip-Ban-Co-The-Dung-Khi-Pham-Sai-Lam-Voi-Git"><a href="#19-Bi-Kip-Ban-Co-The-Dung-Khi-Pham-Sai-Lam-Voi-Git" class="headerlink" title="19 Bí Kíp Bạn Có Thể Dùng Khi Phạm Sai Lầm Với Git"></a>19 Bí Kíp Bạn Có Thể Dùng Khi Phạm Sai Lầm Với Git</h1><p>Những nội dung sau rất nguy hiểm, nếu bạn làm theo, xin hãy chịu trách nhiệm về bản thân mình.</p>
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Code notes & tips</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2019-01-03T10:34:58.000Z" itemprop="datePublished">2019-01-03</time>
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fas fa-archive"></i>
+        <a class="category-link" href="/categories/git/">git</a>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/git/">git</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h1 id="19-Bi-Kip-Ban-Co-The-Dung-Khi-Pham-Sai-Lam-Voi-Git"><a href="#19-Bi-Kip-Ban-Co-The-Dung-Khi-Pham-Sai-Lam-Voi-Git" class="headerlink" title="19 Bí Kíp Bạn Có Thể Dùng Khi Phạm Sai Lầm Với Git"></a>19 Bí Kíp Bạn Có Thể Dùng Khi Phạm Sai Lầm Với Git</h1><p>Những nội dung sau rất nguy hiểm, nếu bạn làm theo, xin hãy chịu trách nhiệm về bản thân mình.</p>
 <p>Nếu có gì sai sót, mong bạn hãy chỉ ra để tôi được biết</p>
 <p>Ở trên local<br>Có hiệu quả khi làm việc trên môi truờng phát triển của bản thân, không làm ảnh hưởng đến người khác. Khi làm việc trên remote sẽ phát sinh ảnh hưởng đến người khác nên rất nguy hiểm.</p>
 <h2 id="Su-co-1：-Khi-trong-commit-message-lo-co-nhung-tu-cam-ki-khien-ban-chi-muon-chet-di-cho-xong"><a href="#Su-co-1：-Khi-trong-commit-message-lo-co-nhung-tu-cam-ki-khien-ban-chi-muon-chet-di-cho-xong" class="headerlink" title="Sự cố 1： Khi trong commit message lỡ có những từ cấm kị khiến bạn chỉ muốn chết đi cho xong"></a>Sự cố 1： Khi trong commit message lỡ có những từ cấm kị khiến bạn chỉ muốn chết đi cho xong</h2><p>Để sửa lại nội dung commit thì rất đơn giản. Cũng có thể thêm được cả file vào trong commit<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git commit --amend</span><br><span class="line"><span class="comment"># Sau lệnh này ta có thể thay đổi nội dung commit message một cách tuỳ ý</span></span><br></pre></td></tr></table></figure></p>
@@ -184,274 +220,142 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># Tiếp tục của sự cố 18</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Thêm commit vào develop branch</span></span><br><span class="line">$ git checkout develop</span><br><span class="line">$ git commit -m <span class="string">"commit message"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Checkout sang master</span></span><br><span class="line">$ git checkout master</span><br><span class="line"></span><br><span class="line"><span class="comment"># revert lại commit revert</span></span><br><span class="line">$ git revert &lt;commit revert&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># merge develop</span></span><br><span class="line">$ git merge develop</span><br><span class="line">``` </span><br><span class="line"> </span><br><span class="line">Khi muốn thử những điều trên ở một môi trường an toàn thì…</span><br><span class="line">Đúng là nếu chưa quen mà tự nhiên lại thực hành luôn thì rất vất vả.</span><br><span class="line"></span><br><span class="line">Những ai đã có sản phầm thì có thể <span class="built_in">clone</span> về và dùng cái đó để <span class="built_in">test</span> thử</span><br><span class="line"></span><br><span class="line">Nếu thế thì cho dù có bị thất bại thì cũng không gây ảnh hưởng gì đến môi trường làm việc chính.</span><br><span class="line"></span><br><span class="line">Những ai chưa có sản phẩm có thể lên Github, tìm hiếm 1 repo nào đó nổi tiếng, <span class="built_in">clone</span> về rồi thực hành</span><br><span class="line"></span><br><span class="line">Tuy nhiên cần chú ý 1 điều là những cái này chỉ được thử ở trên môi trường <span class="built_in">local</span> thôi nhé</span><br><span class="line"></span><br><span class="line">Nếu muốn thử cả ở trên remote nữa thì có thể chuẩn bị sẵn môi trường <span class="built_in">test</span> trên Github, <span class="built_in">clone</span> về rồi thử</span><br><span class="line"></span><br><span class="line">Hình dung cơ bản như sau</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">``` bash</span><br><span class="line"><span class="comment"># git clone về</span></span><br><span class="line">$ git <span class="built_in">clone</span> &lt;URL của repository&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># Thử nghiệm trên local</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Kiểm tra remote hiện tại</span></span><br><span class="line">$ git remote -v</span><br><span class="line"></span><br><span class="line"><span class="comment"># Xoá remote đã đăng ký</span></span><br><span class="line">$ git remote rm origin</span><br><span class="line"></span><br><span class="line"><span class="comment"># Tạo remote đã được chuẩn bị sẵn cho test ở Github và thay đổi lại remote</span></span><br><span class="line">$ git remote add origin &lt;URL của repository mới&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># Sau đó là thử nghiệm trêm remote</span></span><br></pre></td></tr></table></figure>
 <p> Đây là bài viết được copy từ: <a href="https://techtalk.vn/19-bi-kip-ban-co-the-dung-khi-pham-sai-lam-voi-git.html" target="_blank" rel="noopener">techtalk</a> với mục đích note nhai dần không có ý ăn cắp! :D</p>
 
-            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
-            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
-                <source type="audio/mpeg" src>
-            </audio>
-            
-            <ul id="audio-list" style="display:none">
-                
-                
-                <li title="0" data-url="/statics/chengdu.mp3"></li>
-                
-                    
-            </ul>
-            
-            
-            
-    <div id="gitalk-container" class="comment link" data-ae="true" data-ci="ec894e2b66f752e8b7fb" data-cs="3ccc2e92bb350688fe2c2dc2930189b62622bfb1" data-r="blog-comments" data-o="TriDiamond" data-a="TriDiamond" data-d>Comments</div>
+  </div>
+</article>
 
 
-            
-            
-        </div>
-        <div class="sidebar">
-            <div class="box animated fadeInRight">
-                <div class="subbox">
-                    <img src="https://res.cloudinary.com/tridiamond/image/upload/v1573019751/TriDiamond_logo_ui_xeublz.jpg" height="300" width="300">
-                    <p>Anph</p>
-                    <span>Think like an artist, develop like an artisan</span>
-                    <dl>
-                        <dd><a href="https://github.com/TriDiamond" target="_blank"><span class=" iconfont icon-github"></span></a></dd>
-                        <dd><a href="https://twitter.com/TriDiamond6" target="_blank"><span class=" iconfont icon-twitter"></span></a></dd>
-                        <dd><a href="https://stackoverflow.com/users/7602324/tridiamond?tab=profile" target="_blank"><span class=" iconfont icon-stack-overflow"></span></a></dd>
-                    </dl>
-                </div>
-                <ul>
-                    <li><a href="/">26 <p>Articles</p></a></li>
-                    <li><a href="/categories">11 <p>Categories</p></a></li>
-                    <li><a href="/tags">13 <p>Tags</p></a></li>
-                </ul>
-            </div>
-            
-            
-            
-            <div class="box sticky animated fadeInRight faster">
-                <div id="toc" class="subbox">
-                    <h4>Contents</h4>
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#19-Bi-Kip-Ban-Co-The-Dung-Khi-Pham-Sai-Lam-Voi-Git"><span class="toc-number">1.</span> <span class="toc-text">19 Bí Kíp Bạn Có Thể Dùng Khi Phạm Sai Lầm Với Git</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Su-co-1：-Khi-trong-commit-message-lo-co-nhung-tu-cam-ki-khien-ban-chi-muon-chet-di-cho-xong"><span class="toc-number">1.1.</span> <span class="toc-text">Sự cố 1： Khi trong commit message lỡ có những từ cấm kị khiến bạn chỉ muốn chết đi cho xong</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Su-co-2：-Khi-lo-tay-commit-duoi-ten-cua-mot-user-khac"><span class="toc-number">1.2.</span> <span class="toc-text">Sự cố 2： Khi lỡ tay commit dưới tên của môt user khác</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Su-co-３：-Khi-da-lo-tay-commit-mot-so-file-thua-nhung-sau-khi-nghi-lai-thi-nen-ignore-thi-hon"><span class="toc-number">1.3.</span> <span class="toc-text">Sự cố ３： Khi đã lỡ tay commit một số file thừa nhưng sau khi nghĩ lại thì nên ignore thì hơn</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Su-co-4：-Khi-ma-ten-branh-ban-dat-qua-la-“chuoi”"><span class="toc-number">1.4.</span> <span class="toc-text">Sự cố 4： Khi mà tên branh bạn đặt quá là “chuối”</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Su-co-5：-Khi-trong-phut-nong-noi-ban-lo-commit-va-gio-muon-commit-do-bien-mat"><span class="toc-number">1.5.</span> <span class="toc-text">Sự cố 5： Khi trong phút nông nổi bạn lỡ commit và giờ muốn commit đó biến mất</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Su-co-6：-Khi-muon-tong-hop-nhung-commit-vun-vat-truoc-day-thanh-mot-commit"><span class="toc-number">1.6.</span> <span class="toc-text">Sự cố 6： Khi muốn tổng hợp những commit vụn vặt trước đây thành một commit</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Su-co-７：-Khi-ban-muon-chia-commit-to-thanh-nhung-commit-nho-hon-mot-cach-thong-minh"><span class="toc-number">1.7.</span> <span class="toc-text">Sự cố ７： Khi bạn muốn chia commit to thành những commit nhỏ hơn một cách thông minh</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Su-co-８：-Khi-lo-tay-commit-nham-sang-mot-branch-khac"><span class="toc-number">1.8.</span> <span class="toc-text">Sự cố ８： Khi lỡ tay commit nhầm sang một branch khác</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Su-co-９：-Khi-muon-xoa-hoan-toan-cac-file-khong-can-thiet"><span class="toc-number">1.9.</span> <span class="toc-text">Sự cố ９： Khi muốn xoá hoàn toàn các file không cần thiết</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Su-co-10：-Khi-tam-thoi-can-tam-dung-cong-viec-hien-tai-va-chuyen-sang-mot-branch-khac"><span class="toc-number">1.10.</span> <span class="toc-text">Sự cố 10： Khi tạm thời cần tạm dừng công việc hiện tại và chuyển sang một branch khác</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Su-co-11：Khi-lo-tay-xoa-mat-mot-commit-cuc-ki-cuc-ki-quan-trong"><span class="toc-number">1.11.</span> <span class="toc-text">Sự cố 11：Khi lỡ tay xoá mất một commit cực kì cực kì quan trọng</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Su-co-12：-Khi-lo-tay-xoa-mat-branch-va-muon-lay-lai"><span class="toc-number">1.12.</span> <span class="toc-text">Sự cố 12： Khi lỡ tay xoá mất branch và muốn lấy lại</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Su-co-13-Khi-muon-thay-doi-mot-phan-noi-dung-commit"><span class="toc-number">1.13.</span> <span class="toc-text">Sự cố 13: Khi muốn thay đổi một phần nội dung commit</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Su-co-14-Khi-co-conflict-trong-qua-trinh-rebase"><span class="toc-number">1.14.</span> <span class="toc-text">Sự cố 14: Khi có conflict trong quá trình rebase</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Su-co-15-Khi-da-merge-nhung-lai-muon-tro-lai-nhu-luc-truoc"><span class="toc-number">1.15.</span> <span class="toc-text">Sự cố 15: Khi đã merge nhưng lại muốn trở lại như lúc trước</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#O-tren-Remote"><span class="toc-number">2.</span> <span class="toc-text">Ở trên Remote</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Su-co-16-Khi-pull-tu-remote-ve-thi-co-qua-nhieu-conflict-nen-tam-thoi-muon-tro-lai-nhu-cu"><span class="toc-number">2.1.</span> <span class="toc-text">Sự cố 16: Khi pull từ remote về thì có quá nhiều conflict nên tạm thời muốn trở lại như cũ</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Su-co-17-Lo-tay-push-force-len-master-tren-remote"><span class="toc-number">2.2.</span> <span class="toc-text">Sự cố 17: Lỡ tay push force lên master trên remote</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Su-co-18-Sau-khi-release-phat-hien-thay-co-bug-va-muon-tro-ve-nhu-cu"><span class="toc-number">2.3.</span> <span class="toc-text">Sự cố 18: Sau khi release phát hiện thấy có bug và muốn trở về như cũ</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Su-co-19：Khi-sau-khi-chuyen-lai-va-da-commit-them-mot-so-commit-moi-nhung-khong-the-merge-lai-duoc"><span class="toc-number">2.4.</span> <span class="toc-text">Sự cố 19：Khi sau khi chuyển lại và đã commit thêm một số commit mới nhưng không thể merge lại được</span></a></li></ol></li></ol>
-                </div>
-            </div>
-            
-            
-        </div>
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Trang chủ</a></li>
+         
+          <li><a href="/about/">Giới thiệu</a></li>
+         
+          <li><a href="/archives/">Bài viết</a></li>
+         
+          <li><a href="/categories/javascript/">javascript</a></li>
+         
+          <li><a href="/categories/css/">css</a></li>
+         
+          <li><a href="/categories/python/">python</a></li>
+         
+          <li><a href="/categories/regex/">regex</a></li>
+         
+          <li><a href="/categories/nocode/">nocode</a></li>
+        
+      </ul>
     </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#19-Bi-Kip-Ban-Co-The-Dung-Khi-Pham-Sai-Lam-Voi-Git"><span class="toc-number">1.</span> <span class="toc-text">19 Bí Kíp Bạn Có Thể Dùng Khi Phạm Sai Lầm Với Git</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Su-co-1：-Khi-trong-commit-message-lo-co-nhung-tu-cam-ki-khien-ban-chi-muon-chet-di-cho-xong"><span class="toc-number">1.1.</span> <span class="toc-text">Sự cố 1： Khi trong commit message lỡ có những từ cấm kị khiến bạn chỉ muốn chết đi cho xong</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Su-co-2：-Khi-lo-tay-commit-duoi-ten-cua-mot-user-khac"><span class="toc-number">1.2.</span> <span class="toc-text">Sự cố 2： Khi lỡ tay commit dưới tên của môt user khác</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Su-co-３：-Khi-da-lo-tay-commit-mot-so-file-thua-nhung-sau-khi-nghi-lai-thi-nen-ignore-thi-hon"><span class="toc-number">1.3.</span> <span class="toc-text">Sự cố ３： Khi đã lỡ tay commit một số file thừa nhưng sau khi nghĩ lại thì nên ignore thì hơn</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Su-co-4：-Khi-ma-ten-branh-ban-dat-qua-la-“chuoi”"><span class="toc-number">1.4.</span> <span class="toc-text">Sự cố 4： Khi mà tên branh bạn đặt quá là “chuối”</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Su-co-5：-Khi-trong-phut-nong-noi-ban-lo-commit-va-gio-muon-commit-do-bien-mat"><span class="toc-number">1.5.</span> <span class="toc-text">Sự cố 5： Khi trong phút nông nổi bạn lỡ commit và giờ muốn commit đó biến mất</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Su-co-6：-Khi-muon-tong-hop-nhung-commit-vun-vat-truoc-day-thanh-mot-commit"><span class="toc-number">1.6.</span> <span class="toc-text">Sự cố 6： Khi muốn tổng hợp những commit vụn vặt trước đây thành một commit</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Su-co-７：-Khi-ban-muon-chia-commit-to-thanh-nhung-commit-nho-hon-mot-cach-thong-minh"><span class="toc-number">1.7.</span> <span class="toc-text">Sự cố ７： Khi bạn muốn chia commit to thành những commit nhỏ hơn một cách thông minh</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Su-co-８：-Khi-lo-tay-commit-nham-sang-mot-branch-khac"><span class="toc-number">1.8.</span> <span class="toc-text">Sự cố ８： Khi lỡ tay commit nhầm sang một branch khác</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Su-co-９：-Khi-muon-xoa-hoan-toan-cac-file-khong-can-thiet"><span class="toc-number">1.9.</span> <span class="toc-text">Sự cố ９： Khi muốn xoá hoàn toàn các file không cần thiết</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Su-co-10：-Khi-tam-thoi-can-tam-dung-cong-viec-hien-tai-va-chuyen-sang-mot-branch-khac"><span class="toc-number">1.10.</span> <span class="toc-text">Sự cố 10： Khi tạm thời cần tạm dừng công việc hiện tại và chuyển sang một branch khác</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Su-co-11：Khi-lo-tay-xoa-mat-mot-commit-cuc-ki-cuc-ki-quan-trong"><span class="toc-number">1.11.</span> <span class="toc-text">Sự cố 11：Khi lỡ tay xoá mất một commit cực kì cực kì quan trọng</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Su-co-12：-Khi-lo-tay-xoa-mat-branch-va-muon-lay-lai"><span class="toc-number">1.12.</span> <span class="toc-text">Sự cố 12： Khi lỡ tay xoá mất branch và muốn lấy lại</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Su-co-13-Khi-muon-thay-doi-mot-phan-noi-dung-commit"><span class="toc-number">1.13.</span> <span class="toc-text">Sự cố 13: Khi muốn thay đổi một phần nội dung commit</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Su-co-14-Khi-co-conflict-trong-qua-trinh-rebase"><span class="toc-number">1.14.</span> <span class="toc-text">Sự cố 14: Khi có conflict trong quá trình rebase</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Su-co-15-Khi-da-merge-nhung-lai-muon-tro-lai-nhu-luc-truoc"><span class="toc-number">1.15.</span> <span class="toc-text">Sự cố 15: Khi đã merge nhưng lại muốn trở lại như lúc trước</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#O-tren-Remote"><span class="toc-number">2.</span> <span class="toc-text">Ở trên Remote</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Su-co-16-Khi-pull-tu-remote-ve-thi-co-qua-nhieu-conflict-nen-tam-thoi-muon-tro-lai-nhu-cu"><span class="toc-number">2.1.</span> <span class="toc-text">Sự cố 16: Khi pull từ remote về thì có quá nhiều conflict nên tạm thời muốn trở lại như cũ</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Su-co-17-Lo-tay-push-force-len-master-tren-remote"><span class="toc-number">2.2.</span> <span class="toc-text">Sự cố 17: Lỡ tay push force lên master trên remote</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Su-co-18-Sau-khi-release-phat-hien-thay-co-bug-va-muon-tro-ve-nhu-cu"><span class="toc-number">2.3.</span> <span class="toc-text">Sự cố 18: Sau khi release phát hiện thấy có bug và muốn trở về như cũ</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Su-co-19：Khi-sau-khi-chuyen-lai-va-da-commit-them-mot-so-commit-moi-nhung-khong-the-merge-lai-duoc"><span class="toc-number">2.4.</span> <span class="toc-text">Sự cố 19：Khi sau khi chuyển lại và đã commit thêm một số commit mới nhưng không thể merge lại được</span></a></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://anph29.github.io/2019/01/03/19-Bi-Kip-Ban-Co-The-Dung-Khi-Pham-Sai-Lam-Voi-Git/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://anph29.github.io/2019/01/03/19-Bi-Kip-Ban-Co-The-Dung-Khi-Pham-Sai-Lam-Voi-Git/&text=19 Bí Kíp Bạn Có Thể Dùng Khi Phạm Sai Lầm Với Git"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://anph29.github.io/2019/01/03/19-Bi-Kip-Ban-Co-The-Dung-Khi-Pham-Sai-Lam-Voi-Git/&title=19 Bí Kíp Bạn Có Thể Dùng Khi Phạm Sai Lầm Với Git"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://anph29.github.io/2019/01/03/19-Bi-Kip-Ban-Co-The-Dung-Khi-Pham-Sai-Lam-Voi-Git/&is_video=false&description=19 Bí Kíp Bạn Có Thể Dùng Khi Phạm Sai Lầm Với Git"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=19 Bí Kíp Bạn Có Thể Dùng Khi Phạm Sai Lầm Với Git&body=Check out this article: https://anph29.github.io/2019/01/03/19-Bi-Kip-Ban-Co-The-Dung-Khi-Pham-Sai-Lam-Voi-Git/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://anph29.github.io/2019/01/03/19-Bi-Kip-Ban-Co-The-Dung-Khi-Pham-Sai-Lam-Voi-Git/&title=19 Bí Kíp Bạn Có Thể Dùng Khi Phạm Sai Lầm Với Git"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://anph29.github.io/2019/01/03/19-Bi-Kip-Ban-Co-The-Dung-Khi-Pham-Sai-Lam-Voi-Git/&title=19 Bí Kíp Bạn Có Thể Dùng Khi Phạm Sai Lầm Với Git"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://anph29.github.io/2019/01/03/19-Bi-Kip-Ban-Co-The-Dung-Khi-Pham-Sai-Lam-Voi-Git/&title=19 Bí Kíp Bạn Có Thể Dùng Khi Phạm Sai Lầm Với Git"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://anph29.github.io/2019/01/03/19-Bi-Kip-Ban-Co-The-Dung-Khi-Pham-Sai-Lam-Voi-Git/&title=19 Bí Kíp Bạn Có Thể Dùng Khi Phạm Sai Lầm Với Git"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://anph29.github.io/2019/01/03/19-Bi-Kip-Ban-Co-The-Dung-Khi-Pham-Sai-Lam-Voi-Git/&name=19 Bí Kíp Bạn Có Thể Dùng Khi Phạm Sai Lầm Với Git&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://anph29.github.io/2019/01/03/19-Bi-Kip-Ban-Co-The-Dung-Khi-Pham-Sai-Lam-Voi-Git/&t=19 Bí Kíp Bạn Có Thể Dùng Khi Phạm Sai Lầm Với Git"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Chia sẻ</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Về đầu trang</a>
+    </div>
+
+  </div>
 </div>
 
-    </div>
-</div>
-    <div id="back-to-top" class="animated fadeIn faster">
-        <div class="flow"></div>
-        <span class="percentage animated fadeIn faster">0%</span>
-        <span class="iconfont icon-top02 animated fadeIn faster"></span>
-    </div>
-</body>
-<footer>
-    <p class="copyright" id="copyright">
-        &copy; 2020
-        <span class="gradient-text">
-            Anph
-        </span>.
-        Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
-        Theme
-        <span class="gradient-text">
-            <a href="https://github.com/TriDiamond/hexo-theme-obsidian" title="Obsidian" target="_blank" rel="noopener">Obsidian</a>
-        </span>
-        <small><a href="https://github.com/TriDiamond/hexo-theme-obsidian/blob/master/CHANGELOG.md" title="v1.4.3" target="_blank" rel="noopener">v1.4.3</a></small>
-    </p>
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Bản quyền &copy;
+    
+    
+    2016-2020
+    Anph
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Trang chủ</a></li>
+         
+          <li><a href="/about/">Giới thiệu</a></li>
+         
+          <li><a href="/archives/">Bài viết</a></li>
+         
+          <li><a href="/categories/javascript/">javascript</a></li>
+         
+          <li><a href="/categories/css/">css</a></li>
+         
+          <li><a href="/categories/python/">python</a></li>
+         
+          <li><a href="/categories/regex/">regex</a></li>
+         
+          <li><a href="/categories/nocode/">nocode</a></li>
+        
+      </ul>
+    </nav>
+  </div>
 </footer>
 
-<script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-<script>
-  MathJax.Hub.Config({
-    "HTML-CSS": {
-      preferredFont: "TeX",
-      availableFonts: ["STIX", "TeX"],
-      linebreaks: {
-        automatic: true
-      },
-      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
-    },
-    tex2jax: {
-      inlineMath: [
-        ["$", "$"],
-        ["\\(", "\\)"]
-      ],
-      processEscapes: true,
-      ignoreClass: "tex2jax_ignore|dno",
-      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    },
-    TeX: {
-      noUndefined: {
-        attributes: {
-          mathcolor: "red",
-          mathbackground: "#FFEEEE",
-          mathsize: "90%"
-        }
-      },
-      Macros: {
-        href: "{}"
-      }
-    },
-    messageStyle: "none"
-  });
-</script>
-<script>
-  function initialMathJax() {
-    MathJax.Hub.Queue(function () {
-      var all = MathJax.Hub.getAllJax(),
-        i;
-      // console.log(all);
-      for (i = 0; i < all.length; i += 1) {
-        console.log(all[i].SourceElement().parentNode)
-        all[i].SourceElement().parentNode.className += ' has-jax';
+    </div>
+    <!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+    <!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<!-- clipboard -->
+
+  <script src="/lib/clipboard/clipboard.min.js"></script>
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
       }
     });
-  }
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
 
-  function reprocessMathJax() {
-    if (typeof MathJax !== 'undefined') {
-      MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
-    }
-  }
-</script>
+<script src="/js/main.js"></script>
+<!-- search -->
 
+<!-- Google Analytics -->
 
+<!-- Baidu Analytics -->
 
-    <link rel="stylesheet" href="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
-    <script src="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
-
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="/js/plugin.js"></script>
-<script src="/js/obsidian.js"></script>
-<script src="/js/jquery.truncate.js"></script>
-<script src="/js/search.js"></script>
-<script src="//cdn.bootcss.com/typed.js/2.0.10/typed.min.js"></script>
-<script src="//cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
-
-<script src="https://cdn.bootcss.com/codemirror/5.48.4/codemirror.min.js"></script>
-
-    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/javascript/javascript.min.js"></script>
-
-    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/css/css.min.js"></script>
-
-    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/xml/xml.min.js"></script>
-
-    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/htmlmixed/htmlmixed.min.js"></script>
-
-    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/clike/clike.min.js"></script>
-
-    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/php/php.min.js"></script>
-
-    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/shell/shell.min.js"></script>
-
-    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/python/python.min.js"></script>
+<!-- Disqus Comments -->
 
 
-
-    <script src="/js/busuanzi.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            if ($('span[id^="busuanzi_"]').length) {
-                initialBusuanzi();
-            }
-        });
-    </script>
-
-
-<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.css">
-<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/default-skin/default-skin.min.css">
-<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.js"></script>
-<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
-
-<!-- Root element of PhotoSwipe. Must have class pswp. -->
-<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-    <!-- Background of PhotoSwipe. 
-         It's a separate element as animating opacity is faster than rgba(). -->
-    <div class="pswp__bg"></div>
-    <!-- Slides wrapper with overflow:hidden. -->
-    <div class="pswp__scroll-wrap">
-        <!-- Container that holds slides. 
-            PhotoSwipe keeps only 3 of them in the DOM to save memory.
-            Don't modify these 3 pswp__item elements, data is added later on. -->
-        <div class="pswp__container">
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-        </div>
-        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
-        <div class="pswp__ui pswp__ui--hidden">
-            <div class="pswp__top-bar">
-                <!--  Controls are self-explanatory. Order can be changed. -->
-                <div class="pswp__counter"></div>
-                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-                <button class="pswp__button pswp__button--share" title="Share"></button>
-                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
-                <!-- element will get class pswp__preloader--active when preloader is running -->
-                <div class="pswp__preloader">
-                    <div class="pswp__preloader__icn">
-                      <div class="pswp__preloader__cut">
-                        <div class="pswp__preloader__donut"></div>
-                      </div>
-                    </div>
-                </div>
-            </div>
-            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                <div class="pswp__share-tooltip"></div> 
-            </div>
-            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-            </button>
-            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-            </button>
-            <div class="pswp__caption">
-                <div class="pswp__caption__center"></div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="//www.googletagmanager.com/gtag/js?id=UA-149874671-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'UA-149874671-1');
-    </script>
-
-
-
-
-
-<script>
-    function initialTyped () {
-        var typedTextEl = $('.typed-text');
-        if (typedTextEl && typedTextEl.length > 0) {
-            var typed = new Typed('.typed-text', {
-                strings: ["Think like an artist, develop like an artisan", "艺术家思维去思考问题，工匠创造精神去开发"],
-                typeSpeed: 90,
-                loop: true,
-                loopCount: Infinity,
-                backSpeed: 20,
-            });
-        }
-    }
-
-    if ($('.article-header') && $('.article-header').length) {
-        $(document).ready(function () {
-            initialTyped();
-        });
-    }
-</script>
-
-
-
-
+</body>
 </html>

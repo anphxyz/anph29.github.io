@@ -1037,6 +1037,8 @@ body {
 }
 .post-list {
   padding: 0;
+  background: rgba(0,0,0,0.6);
+  padding: 15px;
 }
 .post-list .post-item {
   margin-bottom: 1rem;
